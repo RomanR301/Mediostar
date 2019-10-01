@@ -1,0 +1,45 @@
+// Roman
+
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.partners-component {
+  margin-bottom: 64px;
+  & .partners-carousel {
+    &__item {
+      width: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 200px;
+      padding-bottom: 40px;
+      & a {
+        padding: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-lg) {
+  .partners-component {
+    & .partners-carousel {
+      &__item {
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .partners-component {
+    & .partners-carousel {
+      &__item {
+        width: 50%;
+        & img {
+          width: 70%;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}

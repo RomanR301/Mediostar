@@ -1,0 +1,74 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+
+[data-accordion] [data-content] {
+  overflow: hidden;
+  max-height: 0;
+}
+
+/* Basic Theme */
+
+[data-accordion] {
+  //line-height: 1;
+}
+
+[data-control],
+[data-content] > * {
+  //border-bottom: 1px solid #888;
+  //padding: 10px 20px;
+}
+
+[data-content] [data-accordion] {
+  border: 0;
+  padding: 0;
+}
+
+[data-accordion] [data-control] {
+  position: relative;
+  // padding-left: 10px;
+}
+
+[data-accordion].open > [data-control] i:before {
+  /* -webkit-transform: translateY(-50%) rotate(-180deg);
+   -ms-transform: translateY(-50%) rotate(-180deg);
+   transform: translateY(-50%) rotate(-180deg);*/
+  content: '\e903';
+  font-family: 'icomoon' !important;
+}
+
+
+.settings-accordion {
+  background: $whiteColor;
+  border-radius: 5px;
+  overflow: hidden;
+
+  &-item {
+    margin-bottom: 0;
+    border-bottom: 1px solid #EDEDED;
+  }
+
+  &__content {
+    margin: 0 30px 30px 30px;
+    position: relative;
+  }
+
+  &__header {
+    position: relative;
+    padding: 30px;
+    @include fontSize(14, 16);
+    font-weight: 500;
+    cursor: pointer;
+
+    & i {
+      padding-left: 10px;
+
+      &:before {
+
+        font-size: 10px;
+        @include transition(.3);
+      }
+    }
+  }
+
+}

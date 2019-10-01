@@ -1,0 +1,121 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.prices {
+  margin-bottom: 40px;
+  .current-menu-item {
+    background: $accentColor;
+    color: #fff;
+  }
+  padding-top: 57px;
+  &-heading {
+    font-family: 'Antqua', serif;
+    margin-right: 36px;
+  }
+  &-gender {
+    &-menu {
+      display: flex;
+    }
+    & a {
+      padding: 12px 36px;
+      margin-right: 12px;
+    }
+  }
+  &-hamburger {
+    display: none;
+  }
+  &-categories {
+    padding-top: 22px;
+  }
+  &-sidebar {
+    & h2 {
+      @include fontSize(24, 36);
+      line-height: 1.333;
+      font-weight: bold;
+      margin-bottom: 24px;
+    }
+    & h3 {
+      @include fontSize(20, 24);
+      line-height: 1.5;
+      font-weight: bold;
+      margin-bottom: 24px;
+    }
+    & h4 {
+      @include fontSize(16, 20);
+      line-height: 1.5;
+      font-weight: bold;
+      margin-bottom: 24px;
+    }
+    & h5 {
+      @include fontSize(16, 18);
+      line-height: 1.38;
+      font-weight: 900;
+      margin-bottom: 24px;
+    }
+    & img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 24px;
+    }
+    & p {
+      font-size: 16px;
+      line-height: 30px;
+      margin-bottom: 12px;
+    }
+    &-more {
+      margin-top: 24px;
+      a {
+        padding: 20px 36px;
+      }
+    }
+  }
+}
+
+
+
+@media (max-width: $breakpoint-lg) {
+  .prices {
+    padding-top: 24px;
+    & .row:first-of-type {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    &-heading {
+      margin: 0 0 16px 0;
+    }
+    &-gender {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+// @media (max-width: $breakpoint-sm) {
+
+    // &-hamburger {
+    //   display: block;
+    //   position: absolute;
+    //   right: 6px;
+    //   top: 16px;
+    //   & span {
+    //     position: absolute;
+    //     display: block;
+    //     height: 1px;
+    //     background: #2F4E74;
+    //     width: 16px;
+    //     border-radius: 5px;
+    //     right: 0;
+    //   }
+    //   & span:nth-child(1) {
+    //     top: 0px;
+    //   }
+    //   & span:nth-child(2) {
+    //     top: 4px;
+    //   }
+    //   & span:nth-child(3) {
+    //     top: 8px;
+    //   }
+    // }
+//   }
+// }

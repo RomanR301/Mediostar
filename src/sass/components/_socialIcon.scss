@@ -1,0 +1,29 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+
+.social-navigation a {
+  font-family: 'icomoon' !important;
+  font-size: 18px;
+
+  &:before {
+    content: "\e90a";
+    text-indent: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &[href*="instagram.com"]:before {
+    content: "\e90b";
+  }
+
+  &[href*="facebook.com"]:before {
+    content: "\e908";
+  }
+
+  &[href*="youtube.com"]:before {
+    content: "\e90e";
+  }
+}

@@ -1,0 +1,29 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.pagination {
+  margin: 44px 0 64px 0;
+  & .current {
+    background: $accentColor;
+    color: $whiteColor; 
+  }
+}
+
+.page-numbers {
+  height: 47px;
+  width: 47px;
+  border-radius: 5px;
+  font-size: 24px;
+  line-height: 36px;
+  background: #E0E8F1;
+  @include transition(.3);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16px;
+  &:hover {
+    background: $accentColor;
+    color: $whiteColor; 
+  }
+}

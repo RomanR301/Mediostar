@@ -1,0 +1,220 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+
+.about {
+  margin-bottom: 74px;
+  &-image {
+    border-radius: 10px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 132px;
+  }
+  &-text {
+    padding-top: 57px;
+    &__title {
+      font-family: 'Antqua';
+      margin-bottom: 36px;
+    }
+    &__info {
+      & p {
+        margin-bottom: 8px;
+      }
+    }
+  }
+  &-quote {
+    margin-top: 64px;
+    .quote-container {
+      background: #fff;
+      padding: 64px 102px;
+      position: relative;
+      box-shadow: 0px 0px 15px rgba(165, 165, 165, 0.25);
+      border-radius: 10px;
+    }
+    .quote-image {
+      &:before {
+        content: url(../img/about-quote.svg);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    .quote-text {
+      text-align: center;
+      font-size: 26px;
+      line-height: 36px;
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+}
+
+.achievement-carousel {
+  margin-bottom: 64px;
+  & .achievement-item {
+    width: 50%;
+    height: 500px;
+    & img {
+      width: 40%;
+      opacity: .5;
+      margin: 0 auto;
+    }
+  }
+  & .flickity-prev-next-button.previous, .flickity-prev-next-button.next {
+    top: 42%;
+    left: 20%;
+    right: unset;
+    width: 70px;
+    height: 70px;
+    &:after {
+      font-size: 20px;
+    }
+  }
+  & .flickity-prev-next-button.next {
+    left: unset;
+    right: 20%;
+  }
+
+  & .is-selected {
+    & img {
+      width: 50%;
+      opacity: 1;
+    }
+  }
+}
+
+.goal-heading {
+  font-family: 'Antqua';
+}
+.goal-subtitle p { 
+  font-weight: 300;
+}
+
+.about-goal {
+  & .goal-container {
+    flex-wrap: nowrap;
+    border-radius: 10px;
+    margin: 36px 0 64px 0;
+  }
+  & .goal-quote {
+    padding: 70px 40px 40px 40px;
+    background: #fff;
+    box-shadow: 0px 0px 15px rgba(165, 165, 165, 0.25);
+    border-radius: 10px;
+    position: relative;
+    margin-right: -50px;
+    &:after {
+      content: url(../img/about-quote-black.svg);
+      position: absolute;
+      top: 0;
+      left: 18%;
+      transform: translate(-50%, -50%);
+    }
+    &__text p {
+      margin-bottom: 30px;
+    }
+    &__person {
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+  }
+  & .goal-image {
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(165, 165, 165, 0.25);
+    overflow: hidden;
+    & img {
+      object-fit: cover;  
+    }
+  }
+}
+
+@media(max-width: $breakpoint-xl) {
+  .about-quote {
+    .quote-container {
+      padding: 44px 40px;
+    }
+    .quote-text {
+      font-size: 24px;
+    }
+  }
+}
+
+@media(max-width: $breakpoint-lg) {
+  .about-image {
+    top: 62px;
+  }
+  .about-quote .quote-text {
+    font-size: 20px;
+  }
+  .achievement-carousel .flickity-prev-next-button.previous, .achievement-carousel .flickity-prev-next-button.next {
+    width: 40px;
+    height: 40px;
+  }
+  .achievement-carousel .achievement-item {
+    height: 250px;
+  }
+  .about-goal {
+    & .goal-quote {
+      margin: -40px 0 0 0;
+    }
+    & .column-reverse {
+      flex-direction: column-reverse;
+    }
+    & .goal-image {
+      width: 60%;
+      margin: 0 auto;
+    }
+    & .goal-quote:after {
+      left: 50%;
+    }
+  }
+}
+
+
+@media(max-width: $breakpoint-md) {
+  .about-image {
+    & img {
+      margin: 0 auto;
+      object-fit: cover;
+      max-height: 500px;
+    }
+  }
+  .about-text {
+    padding-top: 30px;
+    &__title {
+      margin-bottom: 24px;
+    }
+  }
+  .about-quote {
+    .quote-container {
+      padding: 34px 24px;
+    }
+    .quote-text {
+      font-size: 16px;
+      line-height: 30px;
+    }
+    .quote-image {
+      transform: scale(0.5);
+      &:before {
+        transform: translate(-50%, -150%);
+      }
+    }
+  }
+}
+
+@media(max-width: $breakpoint-sm) { 
+  .flickity-prev-next-button.next {
+    right: 30% !important;
+    top: unset !important;
+  }
+  .flickity-prev-next-button.previous {
+    left: 30% !important;
+    top: unset !important;
+  }
+  .about-goal {
+    & .goal-image {
+      width: 100%;
+    }
+  }
+}

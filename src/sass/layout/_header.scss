@@ -1,0 +1,323 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+
+.menu {
+  font-size: 0;
+
+  &-item {
+    display: inline-block;
+    position: relative;
+    @include transition(0.3);
+
+    & + .menu-item {
+      @media(max-width: $breakpoint-sm) {
+        margin-left: 0;
+      }
+    }
+
+    & a {
+      display: block;
+    }
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  z-index: 99;
+  border-bottom: none;
+
+  background: #F4F9FF;
+  box-shadow: 0px 0px 15px #D0DAE7;
+  @media (max-width: $breakpoint-lg) {
+    padding: 12px 0;
+  }
+
+  &-logo {
+    width: 102px;
+    margin-right: 60px;
+    @media (max-width: $breakpoint-lg) {
+      width: 44px;
+      margin: 0;
+    }
+    @media(max-width: $breakpoint-xl) {
+      margin-right: 30px;
+      width: 70px;
+    }
+
+    &__link {
+      display: block;
+      height: 100%;
+      widtH: 100%;
+    }
+
+    &__icon {
+
+    }
+  }
+
+  &-top {
+    padding: 7px 0;
+    background: #DEEAF8;
+    @media (max-width: $breakpoint-lg) {
+      display: none;
+    }
+
+    &__license {
+      @include fontSize(14, 16);
+      line-height: 1.56;
+    }
+  }
+
+  &.--up {
+
+    top: -39px;
+    transition: top 0.2s ease-in-out;
+    @media (max-width: $breakpoint-md) {
+      top: 0;
+    }
+  }
+
+  &.--down {
+    top: 0;
+    transition: top 0.2s ease-in-out;
+    @media (max-width: $breakpoint-md) {
+      top: 0;
+    }
+  }
+}
+
+.navbar {
+  width: calc(100% - 162px);
+  @media(max-width: $breakpoint-xl) {
+    width: calc(100% - 100px);
+  }
+  @media (max-width: $breakpoint-lg) {
+    padding: 0 15px 20px 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    position: absolute;
+    width: 100%;
+    right: -110%;
+    top: 36px;
+    background-color: #F4F9FF;
+    @include transition(.3);
+  }
+
+  &.active {
+    right: 0;
+    display: block;
+    @include transition(.3);
+  }
+}
+
+.hamburger {
+  display: none;
+  @media (max-width: $breakpoint-lg) {
+    width: 30px;
+    height: 18px;
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 3px;
+    & span {
+      position: absolute;
+      display: block;
+      height: 2px;
+      background: $accentColor;
+      width: 30px;
+      left: 0;
+      @include transition(0.3);
+
+      &:nth-child(1) {
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        top: 8px;
+      }
+
+      &:nth-child(3) {
+        top: 16px;
+      }
+    }
+
+    &.open {
+      & span {
+        &:nth-child(1) {
+          top: 9px;
+          -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+        }
+
+        &:nth-child(2) {
+          background: transparent;
+        }
+
+        &:nth-child(3) {
+          top: 9px;
+          -webkit-transform: rotateZ(-45deg);
+          transform: rotateZ(-45deg);
+        }
+      }
+    }
+  }
+}
+
+.login, .location, .lang {
+  & a {
+    font-size: 14px;
+    line-height: 18px;
+    color: $accentColor;
+    @include transition(0.4);
+  }
+}
+
+.lang {
+  font-size: 0;
+
+  &-item {
+    display: inline-block;
+    background: transparent;
+    border-radius: 100px;
+    @include transition(0.3);
+
+    & + .lang-item {
+      margin-left: 12px;
+    }
+
+    & a {
+      text-transform: uppercase;
+      padding: 1px 12px;
+    }
+
+    &.current-lang, &:hover {
+      background: $accentColor;
+
+      & a {
+        color: $whiteColor
+      }
+    }
+  }
+}
+
+.location {
+  margin-right: 36px;
+
+  &-item {
+    display: inline-block;
+    border: 1px solid $accentColor;
+    @include transition(0.4);
+
+    &:first-child {
+      border-radius: 100px 0px 0px 100px;
+    }
+
+    &:last-child {
+      border-radius: 0px 100px 100px 0px;
+    }
+
+    & a {
+      padding: 0 15px;
+    }
+
+    &.current, &:hover {
+      background: $accentColor;
+
+      & a {
+        color: $whiteColor;
+      }
+
+    }
+  }
+}
+
+.login {
+  margin-right: 36px;
+
+  &-item {
+    display: inline-block;
+
+    a {
+      & i {
+        margin-left: 8px;
+      }
+    }
+  }
+}
+
+.primary-navigation {
+  padding: 30px 0;
+  @media(max-width: $breakpoint-sm) {
+    padding: 0;
+  }
+  & .menu {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+
+    &-item {
+      border: 1px solid $accentColor;
+      border-radius: 100px;
+      @media(max-width: $breakpoint-sm) {
+        display: block;
+        width: 100%;
+        border: none;
+        border-radius: 0;
+      }
+
+      & + .menu-item {
+        @media(max-width: $breakpoint-sm) {
+          margin-top: 5px;
+        }
+      }
+
+      & a {
+        @include fontSize(14, 16);
+        line-height: 1.18;
+        color: $accentColor;
+        position: relative;
+        padding: 12px 30px;
+        @include transition(0.3);
+        @media(max-width: $breakpoint-sm) {
+          padding: 5px 0;
+        }
+        @media(max-width: $breakpoint-xl) {
+          padding: 12px 20px;
+        }
+      }
+
+      &:hover, &.current-menu-item {
+        background: $accentColor;
+        @media(max-width: $breakpoint-sm) {
+          background: transparent;
+        }
+        & a {
+          color: $whiteColor;
+          @media(max-width: $breakpoint-sm) {
+            color:red;
+
+          }
+        }
+      }
+    }
+  }
+}

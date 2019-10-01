@@ -1,0 +1,160 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.btn {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 100px;
+  cursor: pointer;
+  color: $whiteColor;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  @include fontSize(14, 16);
+  display: inline-block;
+  line-height: 1.187;
+  padding: 20px 45px;
+  min-width: 100px;
+  text-align: center;
+  @include transition(0.3);
+  @media (max-width: $breakpoint-md) {
+    padding: 13px 40px 14px 40px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &-primary {
+    background: $accentColor;
+
+    &:hover {
+      background: #1C60B3;
+    }
+  }
+
+  &-disabled {
+    background: #D2D2D2;
+  }
+
+  &-transparent {
+    color: $accentColor;
+    background: transparent;
+    border-color: $accentColor;
+
+    &:hover {
+      color: $whiteColor;
+      background: $accentColor;
+    }
+  }
+
+  &-white {
+    color: $accentColor;
+    background: $whiteColor;
+    border-color: $accentColor;
+    font-weight: 500;
+
+    &:hover {
+      color: $whiteColor;
+      background: #1C60B3;
+    }
+  }
+
+  &-back {
+    color: $accentColor;
+    background: $whiteColor;
+  }
+
+  &-archive {
+    background: #DEEAF8;
+    color: $accentColor;
+  }
+}
+
+.link {
+  &-primary {
+    color: $accentColor;
+    background: $whiteColor;
+    padding: 0 8px 0 44px;
+    display: inline-block;
+    position: relative;
+    @include transition(0.3);
+
+    &:before {
+      content: '';
+      width: 36px;
+      height: 2px;
+      background: $accentColor;
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      left: 0;
+      @include transition(0.3);
+      z-index: -1;
+    }
+
+    &:hover {
+      margin: 0;
+
+      &:before {
+        content: '';
+        left: 100%;
+        @include transition(0.3);
+      }
+    }
+
+    &.--white {
+      color: $whiteColor;
+      background: $accentColor;
+
+      &:before {
+        background: $whiteColor;
+      }
+    }
+  }
+}
+
+.btn-wrap {
+  & .btn + .btn {
+    margin-left: 36px;
+  }
+}
+
+
+// Online registration btn
+.online-registration {
+  position: fixed;
+  top: 275px;
+  left: 0;
+  padding: 25px 9px;
+  background: $accentColor;
+  color: $whiteColor;
+  writing-mode: vertical-rl;
+  font-size: 16px;
+  line-height: 20px;
+  transform: rotate(180deg);
+  border-radius: 5px 0 0 5px;
+  cursor: pointer;
+  z-index: 9999;
+  @include transition(.3);
+  &:hover {
+    background: #1C60B3;
+  }
+}
+
+@media (max-width: $breakpoint-lg) {
+  .online-registration {
+    position: absolute;
+    top: 8px;
+    left: calc(50% - 50px);
+    transform: rotate(-90deg);
+    top: unset;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 3px 16px 1px 16px;
+    writing-mode: unset;
+    transform: unset;
+  }
+}

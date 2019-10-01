@@ -1,0 +1,109 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.--light {
+  font-weight: 300;
+}
+
+.--regular {
+  font-weight: 400;
+}
+
+.--medium {
+  font-weight: 500;
+}
+
+.--bold {
+  font-weight: 700;
+}
+.--heavy{
+  font-weight: 900;
+}
+h1, h2 {
+  font-family: 'Antqua', sans-serif;
+}
+
+h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+}
+
+.heading-1 {
+  @include fontSize(30, 48);
+  line-height: 1.333;
+}
+
+.heading-2 {
+  @include fontSize(24, 36);
+  line-height: 1.333;
+}
+
+.heading-3 {
+  @include fontSize(20, 24);
+  line-height: 1.5;
+}
+
+.heading-4 {
+  @include fontSize(16, 20);
+  line-height: 1.5;
+}
+
+.heading-5 {
+  @include fontSize(14, 18);
+  line-height: 1.38;
+}
+
+.heading-6 {
+  @include fontSize(12, 14);
+}
+
+.icon-arrowBottom:before {
+  content: "\e900";
+}
+.icon-arrowLeft:before {
+  content: "\e901";
+}
+.icon-arrowRight:before {
+  content: "\e902";
+}
+.icon-arrowTop:before {
+  content: "\e903";
+}
+.icon-facebook:before {
+  content: "\e904";
+}
+.icon-instagram:before {
+  content: "\e905";
+}
+.icon-location:before {
+  content: "\e906";
+}
+.icon-phone:before {
+  content: "\e907";
+}
+.icon-send:before {
+  content: "\e908";
+}
+.icon-telegram:before {
+  content: "\e909";
+}
+.icon-user:before {
+  content: "\e90a";
+}
+.icon-viber:before {
+  content: "\e90b";
+}
+.icon-youtube:before {
+  content: "\e90c";
+}

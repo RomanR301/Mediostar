@@ -1,0 +1,279 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+
+.socisl-list {
+  &__item {
+    display: inline-block;
+    position: relative;
+
+    & + & {
+      margin-left: 20px;
+    }
+
+    & i {
+      font-size: 20px;
+    }
+
+    & a {
+      font-size: 12px;
+    }
+  }
+}
+
+.phone-list {
+  margin-top: 24px;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 50px;
+  -moz-column-gap: 50px;
+  column-gap: 50px;
+  @media (max-width: $breakpoint-md) {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    -webkit-column-gap: 0;
+    -moz-column-gap: 0;
+    column-gap: 0;
+    margin-top: 0;
+  }
+
+  &__item {
+    &, & a {
+      @include fontSize(14, 16);
+      line-height: 1.25;
+    }
+  }
+}
+
+.location-list {
+  &__item {
+    &, & a {
+      @include fontSize(14, 16);
+      line-height: 1.25;
+    }
+  }
+}
+
+.footer {
+  background: $accentColor;
+  color: $whiteColor;
+  padding: 45px 0 36px 0;
+  @media (max-width: $breakpoint-md) {
+    text-align: center;
+    padding: 36px 0;
+  }
+
+  &-logo {
+    &__link {
+      display: block;
+
+      & img {
+        @media (max-width: $breakpoint-md) {
+          width: 160px;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    &__title {
+      margin: 65px 0 72px 0;
+      width: 80%;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &-title {
+    margin-bottom: 22px;
+  }
+
+  & a {
+    @include transition(0.3);
+
+    &:hover {
+      color: #5898E7;
+    }
+  }
+
+  &-row {
+    margin: 0 -5px;
+  }
+
+  &-column {
+    padding: 0 2.5px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 36px;
+    }
+  }
+
+  & .menu {
+    &-item {
+      display: block;
+      margin-top: 16px;
+
+      &, & a {
+        @include fontSize(13, 16);
+        line-height: 1.25;
+      }
+
+    }
+  }
+
+  .contacts-list {
+    margin-bottom: 36px;
+
+    & .menu {
+      &-item {
+        & a {
+          padding-left: 25px;
+          position: relative;
+
+          &:before {
+            content: '\e90b';
+            font-family: 'icomoon' !important;
+            font-size: 15px;
+            line-height: 10px;
+            position: absolute;
+
+            top: 50%;
+            left: 0px;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+  }
+
+
+  .phone-list {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    -webkit-column-gap: 0;
+    -moz-column-gap: 0;
+    column-gap: 0;
+    margin-top: 0;
+
+    &__item {
+      margin-bottom: 16px;
+
+      & a {
+        & i {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  .location-list {
+    &__item {
+      margin-bottom: 16px;
+
+      & a {
+        & i {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+
+.paymen-system {
+  padding: 55px 0 30px 0;
+
+  &__item {
+    display: inline-block;
+    width: 65px;
+
+    & + & {
+      margin-left: 24px;
+    }
+
+    & img {
+      object-fit: contain;
+      object-position: center;
+    }
+
+  }
+}
+
+.contacts {
+  padding: 61px 0;
+  background: $accentColor;
+
+  &-icon {
+    box-shadow: 0px 0px 15px #0E2349;
+    border-radius: 10px;
+    height: 250px;
+    overflow: hidden;
+    margin-top: 30px;
+
+    & img {
+      object-fit: cover;
+    }
+  }
+
+  &-wrap {
+    padding: 30px 45px;
+    background: #F4F9FF;
+    box-shadow: 0px 0px 15px #0E2349;
+    border-radius: 10px;
+  }
+
+  & .menu {
+    &-item {
+      display: block;
+    }
+  }
+
+
+}
+
+
+.copyright {
+  margin-top: 35px;
+  @media (max-width: $breakpoint-md) {
+    margin-top: 0;
+  }
+
+  &-column {
+    & + & {
+      @media (max-width: $breakpoint-md) {
+        margin-top: 8px;
+      }
+    }
+  }
+
+  &-text, & a {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: normal;
+  }
+
+  &-text {
+    @media (max-width: $breakpoint-md) {
+      text-align: center;
+    }
+
+    & a {
+      & b {
+        font-weight: bold;
+        @include transition(0.3);
+      }
+
+      &:hover {
+        color: $whiteColor;
+
+        & b {
+          color: #0062FC;
+        }
+
+      }
+    }
+  }
+}

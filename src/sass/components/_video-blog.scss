@@ -1,0 +1,79 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.video {
+  &-section {
+    margin-bottom: 67px;
+    @media (max-width: $breakpoint-md) {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+  }
+
+  &-carousel {
+    margin: 0 -15px;
+    padding: 24px 0 65px 0;
+    @media(max-width: $breakpoint-md) {
+      padding: 28px 0 76px 0;
+    }
+
+    &__item {
+      width: 33.333332%;
+      padding: 0 15px;
+      @media(max-width: $breakpoint-md) {
+        padding: 0 24px;
+        width: 99.999996%;
+      }
+    }
+  }
+
+  &-item {
+
+    height: 100%;
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    overflow: hidden;
+
+    &__icon {
+      position: relative;
+    }
+
+    & .mask {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+
+      background: rgba(0, 56, 144, 0.2);
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      @include transition(0.3);
+
+      & img {
+        width: 76px;
+        height: 76px;
+        @include transition(0.3);
+
+        &:hover {
+
+          transform: scale(1.2)
+
+        }
+      }
+
+    }
+  }
+}

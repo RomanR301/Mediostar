@@ -1,0 +1,13 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.price {
+  &-table {
+    &__row {
+      padding: 8px 0;
+      &:nth-child(odd){
+
+      }
+    }
+  }
+}

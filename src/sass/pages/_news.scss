@@ -1,0 +1,129 @@
+// Roman
+
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.news {
+  padding-top: 60px;
+  &-heading {
+    font-family: 'Antqua', serif;
+  }
+  &-nav {
+    margin: 28px 0 48px 0;
+    & li {
+      margin-right: 20px;
+      & a {
+        padding: 12px 36px;
+      }
+    }
+  }
+  &-item {
+    border-radius: 10px;
+    overflow: hidden;
+    background: $whiteColor;
+    margin-bottom: 30px;
+    &__image {
+      overflow: hidden;
+      &:hover img {
+        transform: scale(1.07);
+      }
+      & img {
+        object-fit: cover;
+        object-position: center;
+        height: 340px;
+        @include transition(.3);
+      }
+    }
+    &__info {
+      padding: 24px;
+      font-size: 16px;
+      line-height: 30px;
+      & .news-info {
+        &__date {
+          padding-bottom: 16px;
+          & img {
+            padding-right: 12px;
+          }
+        }
+        &__title {
+          padding-bottom: 16px;
+          font-size: 24px;
+          line-height: 36px;
+        }
+        &__text {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .news-nav {
+    margin: 14px 0 28px 0;
+    flex-direction: column;
+    & li {
+      margin: 10px 0 0 0;
+    }
+  }
+  .news-item__info {
+    font-size: 14px;
+    & .news-info__title {
+      font-size: 18px;
+      line-height: 25px;
+    }
+  }
+}
+
+// Ціни (з бронюванням) POPUP
+
+.reservation-popup {
+  width: 645px;
+  height: 1034px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  background: $whiteColor;
+  position: relative;
+  & .reservation-close {
+    position: absolute;
+    top: 36px;
+    right: 36px;
+    cursor: pointer;
+  }
+  & .reservation-content {
+    padding: 36px;
+  }
+  & .reservation {
+    &-procedure, &-price {
+      padding-right: 28px;
+      font-size: 24px;
+      line-height: 36px;
+      color: #888888;
+      & span {
+        color: $defaultTextColor;
+      }
+    }
+    &-city {
+      position: relative;
+      & select {
+        width: 310px;
+        height: 54px;
+        border-radius: 5px;
+        border: 1px solid #C4C4C4;
+        padding: 17px 24px;
+        -webkit-appearance: button;
+        outline: none;
+        font-size: 16px;
+        line-height: 20px;
+        color: #7C7C7C;
+      }
+    }
+  }
+}
+
+
+

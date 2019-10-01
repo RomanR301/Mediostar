@@ -1,0 +1,228 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.primary-screen {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  @media (max-width: $breakpoint-md) {
+    height: auto;
+    padding: 90px 0 50px 0;
+  }
+
+  & .full-height {
+    @media (max-width: $breakpoint-md) {
+      height: auto;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0px;
+    left: auto;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    @media (max-width: $breakpoint-md) {
+      position: relative;
+      height: auto;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    & img {
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+
+  &__title {
+    font-family: 'Antqua', sans-serif;
+  }
+
+  &__description {
+    width: 75%;
+    padding: 34px 0;
+    font-weight: 300;
+    @media (max-width: $breakpoint-md) {
+      padding: 20px 0;
+      width: 100%;
+    }
+  }
+
+  &__btn {
+    padding: 19px 45px 22px 45px;
+    max-width: 350px;
+    width: 100%;
+  }
+
+  &-carousel {
+    &__item {
+      width: 100%;
+      text-align: left;
+      @media (max-width: $breakpoint-md) {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.home-contacts {
+  padding: 64px 0;
+
+  .socisl-list {
+    margin-top: 24px;
+
+    &__item {
+      & a {
+        height: 41px;
+        width: 41px;
+        background: $accentColor;
+        border-radius: 100%;
+        color: $whiteColor;
+        @include transition(0.3);
+
+        &:hover {
+          background: #1C60B3;
+        }
+      }
+    }
+
+    & i {
+      font-size: 14px;
+    }
+  }
+}
+
+.home-categories {
+  padding: 0 0 64px 0;
+
+  .tabs {
+    &-list {
+      &-item {
+        & + .tabs-list-item {
+          margin-top: 12px;
+        }
+
+        &__link {
+          display: block;
+          font-weight: 300;
+          font-size: 20px;
+          @include fontSize(16, 20);
+          line-height: 1.5;
+          color: $accentColor;
+          padding: 3px 12px 5px 53px;
+
+          &.active, &:hover {
+            background: rgba(203, 223, 255, 0.3);
+            border-radius: 0px 5px 5px 0px;
+
+            color: $defaultTextColor;
+          }
+        }
+      }
+    }
+
+    &-wrap {
+      .tab-content {
+        display: none;
+        animation: fadeEffect .5s;
+        -webkit-animation: fadeEffect .5s;
+
+        &.is-show {
+          display: block;
+        }
+
+        &.active {
+          display: block;
+        }
+      }
+    }
+  }
+
+}
+
+.gallery {
+  margin-bottom: 64px;
+  &-carousel {
+    //margin: 0 -16px;
+    padding-bottom: 76px;
+    &__item {
+      width: 27%;
+      height: 364px;
+      padding: 0 24px;
+      @media (max-width: $breakpoint-xl) {
+        width: 45%;
+        padding: 0 15px;
+      }
+      @media (max-width: $breakpoint-lg) {
+        width: 65%;
+        padding: 0 15px;
+      }
+      @media (max-width: $breakpoint-md) {
+        width: 100%;
+      }
+      & figure {
+        border-radius: 10px;
+        overflow: hidden;
+        height: 100%;
+
+        & img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .tabs {
+    &-list {
+      margin-bottom: 24px;
+
+      &-item {
+        & + .tabs-list-item {
+          margin-left: 29px;
+          @media (max-width: $breakpoint-md) {
+            margin-left: 24px;
+          }
+        }
+
+        &__link {
+          border: 1px solid $accentColor;
+          border-radius: 100px;
+          display: inline-block;
+          font-weight: 500;
+          @include fontSize(14,16);
+          line-height: 1.18;
+          color: $accentColor;
+          padding: 21px 64px;
+          border: 1px solid $accentColor;
+          @media (max-width: $breakpoint-md) {
+            width: 100%;
+            padding: 14px 41px 13px 41px;
+          }
+          &.active, &:hover {
+            background: $accentColor;
+            color: $whiteColor;
+          }
+        }
+      }
+    }
+
+    &-wrap {
+      .tab-content {
+        display: none;
+        animation: fadeEffect .5s;
+        -webkit-animation: fadeEffect .5s;
+
+        &.is-show {
+          display: block;
+        }
+
+        &.active {
+          display: block;
+        }
+      }
+    }
+  }
+}

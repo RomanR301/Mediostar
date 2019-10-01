@@ -1,0 +1,39 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.thanks {
+  width: 100vw;
+  height: 100vh;
+  background: $accentColor;
+  padding: 15px;
+  text-align: center;
+  &-title {
+    margin-bottom: 14px;
+  }
+  &-subtitle {
+    margin-bottom: 64px;
+  }
+  &-main {
+    font-family: 'Lato';
+    font-size: 36px;
+    line-height: 48px;
+    margin-bottom: 24px;
+    color: #fff;
+  }
+  &-contact p {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 300;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  &-contact p:first-of-type{
+    margin-bottom: 0;
+  }
+  &-back {
+    & a {
+      padding: 20px 56px;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.reviews {
+  padding-bottom: 64px;
+  &-carousel {
+    padding: 24px 0 67px 0;
+
+    &__item {
+      width: 28.8%;
+      padding: 0 24px;
+      @media(max-width: $breakpoint-md) {
+        padding: 0 24px;
+        width: 99.999996%;
+      }
+
+      &:last-child {
+        & .reviews-item {
+          background: $accentColor;
+          height: 300px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  &-item {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 15px rgba(220, 235, 253, 0.7);
+    border-radius: 10px;
+    width: 100%;
+    padding: 28px;
+    @media(max-width: $breakpoint-md) {
+      padding: 20px;
+    }
+
+    &__icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 100%;
+      margin-right: 16px;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    &__name {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    &__text {
+      font-size: 14px;
+      line-height: 24px;
+      margin-bottom: 28px;
+    }
+
+    &__link {
+      font-size: 12px;
+      line-height: 16px;
+      color: #999999;
+    }
+  }
+
+  & .flickity-slider {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .btn-wrap {
+    & .btn + .btn {
+      @media (max-width: $breakpoint-md) {
+        margin-left: 0;
+        margin-top: 8px;
+      }
+    }
+
+    & .btn {
+      @media (max-width: $breakpoint-md) {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.subscribe {
+  background: #f15a23;
+  padding: 100px 0;
+  @media (max-width: $breakpoint-md) {
+    padding: 60px 0;
+  }
+}
+
+.subscribe-block {
+  &__field {
+    position: relative;
+    margin-right: 15px;
+  }
+
+  &__title {
+    margin-bottom: 14px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  &__notification {
+    font-size: 10px;
+    line-height: 18px;
+    color: $whiteColor;
+    margin-top: 12px;
+  }
+  &__input {
+    background: #fff;
+    border: none;
+    width: 100%;
+    padding: 11px 16px 10px 16px;
+    position: relative;
+    margin-right: 15px;
+    border-radius: 3px;
+  }
+
+  &__btn {
+    background: #2E61A0;
+    border-radius: 0px 3px 3px 0px;
+    width: 45px;
+    min-width: 50px;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    right: -1px;
+    padding: 0;
+    & i {
+      font-size: 15px;
+    }
+    @media (max-width: $breakpoint-md) {
+      display: block;
+      padding: 13px;
+      margin: 0 0 auto auto;
+      font-size: 12px;
+    }
+  }
+}

@@ -1,0 +1,122 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.equipment {
+
+  &-carousel {
+    padding: 0 15px;
+    @media(max-width: $breakpoint-lg) {
+      padding: 0;
+
+    }
+
+    &__item {
+      width: 24.999999%;
+      padding: 0 15px;
+      @media(max-width: $breakpoint-lg) {
+        padding: 0;
+        width: 99.999996%;
+      }
+    }
+  }
+
+  &-item {
+    background: $accentColor;
+    border-radius: 10px;
+    padding: 30px 24px 10px 24px;
+    @include transition(.3);
+    overflow: hidden;
+
+    &__icon {
+      height: 360px;
+
+    }
+
+    &__title {
+      color: $whiteColor;
+      line-height: normal;
+      margin-bottom: 7px;
+    }
+
+    &__advantages {
+      padding-top: 8px;
+
+      & li {
+        font-size: 14px;
+        line-height: 22px;
+        color: $whiteColor;
+        position: relative;
+        padding-left: 16px;
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 8px;
+          width: 8px;
+          height: 8px;
+          -webkit-border-radius: 100%;
+          -moz-border-radius: 100%;
+          border-radius: 100%;
+          background: $whiteColor;
+        }
+      }
+
+    }
+
+    &__content {
+      background: rgba(0, 0, 0, 0.9);
+      padding: 30px;
+      position: absolute;
+      bottom: -100%;
+      left: 0;
+      width: 100%;
+      @include transition(0.3);
+      height: 100%;
+    }
+
+    & .btn-white {
+
+      padding: 12px 42px;
+      margin-top: 15px;
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &:hover {
+      & .equipment-item__content {
+        bottom: 0;
+      }
+    }
+  }
+
+  &-component {
+    padding-bottom: 64px;
+
+    & .flickity-prev-next-button {
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      margin: 0;
+      padding: 0;
+
+      &:after {
+        content: '';
+        color: #8F8F8F;
+        font-size: 24px;
+      }
+
+      &.previous {
+        right: auto;
+        left: 0;
+      }
+
+      &.next {
+        right: 0;
+        left: auto;
+      }
+    }
+  }
+}
