@@ -5486,7 +5486,13 @@ button.mfp-close, button.mfp-arrow {
 }
 
 @media (max-width: 767px) {
-  .prices tr {
+  .prices-content table {
+    min-width: 500px;
+  }
+  .prices-content tr td:first-of-type {
+    padding-left: 24px;
+  }
+  .prices-content .table-wrap {
     overflow-x: auto;
   }
 }

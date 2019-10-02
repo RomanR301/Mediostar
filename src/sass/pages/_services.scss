@@ -294,9 +294,18 @@
 }
 
 @media (max-width: $breakpoint-md) {
-  .prices {
+  & .prices-content {
+    & table {
+      min-width: 500px;
+    }
     & tr {
+      & td:first-of-type {
+        padding-left: 24px;
+      }
+    }
+    & .table-wrap {
       overflow-x: auto;
     }
+    
   }
 }
