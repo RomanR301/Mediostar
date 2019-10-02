@@ -3884,6 +3884,12 @@ input:-webkit-autofill {
   border-radius: 100px;
 }
 
+@media (max-width: 575px) {
+  .inner-nav-menu-item {
+    margin: 0 0 10px 0;
+  }
+}
+
 .inner-nav-menu-item a {
   font-size: 16px;
   font-size: -webkit-calc(14px + (16 - 14) * ((100vw - 300px) / (1900 - 300)));
@@ -5325,15 +5331,15 @@ button.mfp-close, button.mfp-arrow {
   display: block;
 }
 
-.prices {
+.prices-content {
   width: 100%;
 }
 
-.prices table {
+.prices-content table {
   width: 100%;
 }
 
-.prices caption {
+.prices-content caption {
   font-size: 24px;
   line-height: 32px;
   font-weight: 700;
@@ -5341,15 +5347,15 @@ button.mfp-close, button.mfp-arrow {
   padding: 36px 0 24px 0;
 }
 
-.prices tr th:first-of-type {
+.prices-content tr th:first-of-type {
   padding: 8px 8px 8px 36px;
 }
 
-.prices tr th:nth-child(2n) {
+.prices-content tr th:nth-child(2n) {
   width: 50%;
 }
 
-.prices th {
+.prices-content th {
   padding: 8px;
   text-align: left;
   font-weight: 500;
@@ -5357,7 +5363,7 @@ button.mfp-close, button.mfp-arrow {
   line-height: 30px;
 }
 
-.prices td {
+.prices-content td {
   padding: 8px;
   text-align: left;
   font-size: 16px;
@@ -5365,24 +5371,24 @@ button.mfp-close, button.mfp-arrow {
   vertical-align: middle;
 }
 
-.prices tr td:first-of-type {
+.prices-content tr td:first-of-type {
   padding-left: 36px;
 }
 
-.prices tr td:last-of-type {
+.prices-content tr td:last-of-type {
   text-align: right;
   padding-right: 16px;
 }
 
-.prices tr:nth-child(odd) {
+.prices-content tr:nth-child(odd) {
   background: #E8F1FF;
 }
 
-.prices i {
+.prices-content i {
   cursor: pointer;
 }
 
-.prices i:before {
+.prices-content i:before {
   content: url("../img/add-service.svg");
 }
 
@@ -5479,6 +5485,12 @@ button.mfp-close, button.mfp-arrow {
   display: flex;
 }
 
+@media (max-width: 767px) {
+  .prices tr {
+    overflow-x: auto;
+  }
+}
+
 .prices {
   margin-bottom: 40px;
   padding-top: 57px;
@@ -5573,8 +5585,20 @@ button.mfp-close, button.mfp-arrow {
   padding: 20px 36px;
 }
 
+.prices .sidebar {
+  will-change: min-height;
+}
+
+.prices .sidebar__inner {
+  transform: translate(0, 0);
+  /* For browsers don't support translate3d. */
+  transform: translate3d(0, 0, 0);
+  will-change: position, transform;
+}
+
 @media (max-width: 991px) {
   .prices {
+    overflow: hidden;
     padding-top: 24px;
   }
   .prices .row:first-of-type {
@@ -5586,6 +5610,19 @@ button.mfp-close, button.mfp-arrow {
   }
   .prices-gender {
     margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  #main-content {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .prices-content {
+    overflow: scroll;
+  }
+  .prices-content table {
+    overflow: scroll;
   }
 }
 

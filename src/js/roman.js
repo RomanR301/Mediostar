@@ -60,6 +60,8 @@ $(document).ready(function() {
     containerSelector: '#main-content',
     innerWrapperSelector: '.sidebar__inner',
     topSpacing: 160,
-    bottomSpacing: 50
+    bottomSpacing: 50,
+    minWidth: 768
   });
+
 });

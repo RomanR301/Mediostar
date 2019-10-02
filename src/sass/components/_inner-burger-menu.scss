@@ -82,6 +82,9 @@
     &-item {
       margin: 0 20px 20px 0;
       border-radius: 100px;
+      @media(max-width: $breakpoint-sm) {
+        margin: 0 0 10px 0;
+      }
       & a {
         @include fontSize(14, 16);
         line-height: 1.18;
@@ -98,7 +101,6 @@
           }
         }
       }
-
     }
   }
   & .active {
@@ -106,3 +108,9 @@
     right: 0;
   }
 }
+// @media(max-width: $breakpoint-sm) {
+//   .hidden {
+//     height: 100vh;
+//     overflow-x: hidden;
+//   }
+// }

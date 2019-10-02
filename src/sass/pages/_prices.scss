@@ -71,12 +71,21 @@
       }
     }
   }
+  & .sidebar {
+    will-change: min-height;
+    &__inner {
+      transform: translate(0, 0); /* For browsers don't support translate3d. */
+      transform: translate3d(0, 0, 0);
+      will-change: position, transform;
+    }
+  }
 }
 
 
 
 @media (max-width: $breakpoint-lg) {
   .prices {
+    overflow: hidden;
     padding-top: 24px;
     & .row:first-of-type {
       flex-direction: column;
@@ -91,31 +100,15 @@
   }
 }
 
-// @media (max-width: $breakpoint-sm) {
-
-    // &-hamburger {
-    //   display: block;
-    //   position: absolute;
-    //   right: 6px;
-    //   top: 16px;
-    //   & span {
-    //     position: absolute;
-    //     display: block;
-    //     height: 1px;
-    //     background: #2F4E74;
-    //     width: 16px;
-    //     border-radius: 5px;
-    //     right: 0;
-    //   }
-    //   & span:nth-child(1) {
-    //     top: 0px;
-    //   }
-    //   & span:nth-child(2) {
-    //     top: 4px;
-    //   }
-    //   & span:nth-child(3) {
-    //     top: 8px;
-    //   }
-    // }
-//   }
-// }
+@media (max-width: $breakpoint-md) {
+  #main-content {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .prices-content {
+    overflow: scroll;
+    & table {
+      overflow: scroll;
+    }
+  }
+}

@@ -163,7 +163,7 @@
   }
 }
 
-.prices {
+.prices-content {
   width: 100%;
   & table {
     width: 100%;
@@ -291,5 +291,12 @@
     display: flex;
     // Цей клас робить вложене меню видимим
   }  
-  
+}
+
+@media (max-width: $breakpoint-md) {
+  .prices {
+    & tr {
+      overflow-x: auto;
+    }
+  }
 }
