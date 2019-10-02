@@ -294,7 +294,7 @@
 }
 
 @media (max-width: $breakpoint-md) {
-  & .prices-content {
+  .prices-content {
     & table {
       min-width: 500px;
     }
@@ -307,12 +307,11 @@
       overflow-x: auto;
       padding-bottom: 5px;
     }
-    
   }
+
 }
 
   ::-webkit-scrollbar {
-  width: 12px;
   height: 5px;
   }
   

@@ -105,10 +105,13 @@
     display: flex;
     flex-direction: column-reverse;
   }
-  .prices-content {
-    overflow: scroll;
-    & table {
-      overflow: scroll;
+  .prices {
+    &-sidebar {
+      &-more {
+        & a {
+          padding: 14px 26px;
+        }
+      }
     }
   }
 }

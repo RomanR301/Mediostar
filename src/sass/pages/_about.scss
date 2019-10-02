@@ -201,17 +201,23 @@
       }
     }
   }
+  & .achievement-carousel .flickity-prev-next-button.previous:after, .achievement-carousel .flickity-prev-next-button.next:after {
+    font-size: 10px;
+  }
 }
 
 @media(max-width: $breakpoint-sm) { 
-  .flickity-prev-next-button.next {
-    right: 30% !important;
-    top: unset !important;
+  .achievement {
+    .flickity-prev-next-button.next {
+      right: 30% !important;
+      top: unset !important;
+    }
+    .flickity-prev-next-button.previous {
+      left: 30% !important;
+      top: unset !important;
+    }
   }
-  .flickity-prev-next-button.previous {
-    left: 30% !important;
-    top: unset !important;
-  }
+
   .about-goal {
     & .goal-image {
       width: 100%;

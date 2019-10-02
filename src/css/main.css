@@ -5115,14 +5115,17 @@ button.mfp-close, button.mfp-arrow {
   .about-quote .quote-image:before {
     transform: translate(-50%, -150%);
   }
+  .achievement-carousel .flickity-prev-next-button.previous:after, .achievement-carousel .flickity-prev-next-button.next:after {
+    font-size: 10px;
+  }
 }
 
 @media (max-width: 575px) {
-  .flickity-prev-next-button.next {
+  .achievement .flickity-prev-next-button.next {
     right: 30% !important;
     top: unset !important;
   }
-  .flickity-prev-next-button.previous {
+  .achievement .flickity-prev-next-button.previous {
     left: 30% !important;
     top: unset !important;
   }
@@ -5499,7 +5502,6 @@ button.mfp-close, button.mfp-arrow {
 }
 
 ::-webkit-scrollbar {
-  width: 12px;
   height: 5px;
 }
 
@@ -5641,11 +5643,8 @@ button.mfp-close, button.mfp-arrow {
     display: flex;
     flex-direction: column-reverse;
   }
-  .prices-content {
-    overflow: scroll;
-  }
-  .prices-content table {
-    overflow: scroll;
+  .prices-sidebar-more a {
+    padding: 14px 26px;
   }
 }
 
