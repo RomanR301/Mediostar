@@ -66,17 +66,53 @@
 }
 
 .inner-nav {
+  &-heading {
+    display: none;
+    @media(max-width: $breakpoint-sm) {
+      font-family: 'Antqua', sans-serif;
+      display: block;
+      position: absolute;
+      top: 14px;
+    }
+  }
+  &-close {
+    display: none;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 24px;
+    right: 20px;
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      top: 12px;
+      right: 2px;
+      width: 26px;
+      height: 2px;
+      background: $defaultTextColor;
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+    @media(max-width: $breakpoint-sm) {
+      display: block;
+    }
+  }
   &-menu {
     padding-top: 16px;
     @media(max-width: $breakpoint-sm) {
-      position: absolute;
+      position: fixed;
+      height: calc(100vh - 62px);
+      overflow-y: auto;
+      top: 61px;
       right: -110%;
       width: 100%;
       background: $bodyBackground;
       z-index: 12;
-      padding: 0 15px;
+      padding: 70px 15px 70px 15px;
       flex-direction: column;
-      // height: 100vh;
+      flex-wrap: nowrap;
       @include transition (.3);
     }
     &-item {
@@ -104,7 +140,6 @@
     }
   }
   & .active {
-    display: block;
     right: 0;
   }
 }

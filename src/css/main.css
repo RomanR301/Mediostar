@@ -3858,19 +3858,66 @@ input:-webkit-autofill {
   }
 }
 
+.inner-nav-heading {
+  display: none;
+}
+
+@media (max-width: 575px) {
+  .inner-nav-heading {
+    font-family: 'Antqua', sans-serif;
+    display: block;
+    position: absolute;
+    top: 14px;
+  }
+}
+
+.inner-nav-close {
+  display: none;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 24px;
+  right: 20px;
+}
+
+.inner-nav-close:before, .inner-nav-close:after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  right: 2px;
+  width: 26px;
+  height: 2px;
+  background: #333333;
+  transform: rotate(45deg);
+}
+
+.inner-nav-close:after {
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 575px) {
+  .inner-nav-close {
+    display: block;
+  }
+}
+
 .inner-nav-menu {
   padding-top: 16px;
 }
 
 @media (max-width: 575px) {
   .inner-nav-menu {
-    position: absolute;
+    position: fixed;
+    height: calc(100vh - 62px);
+    overflow-y: auto;
+    top: 61px;
     right: -110%;
     width: 100%;
     background: #F4F9FF;
     z-index: 12;
-    padding: 0 15px;
+    padding: 70px 15px 70px 15px;
     flex-direction: column;
+    flex-wrap: nowrap;
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
@@ -3918,7 +3965,6 @@ input:-webkit-autofill {
 }
 
 .inner-nav .active {
-  display: block;
   right: 0;
 }
 
@@ -5615,6 +5661,10 @@ button.mfp-close, button.mfp-arrow {
   /* For browsers don't support translate3d. */
   transform: translate3d(0, 0, 0);
   will-change: position, transform;
+}
+
+.scroll-lock {
+  position: fixed !important;
 }
 
 @media (max-width: 991px) {

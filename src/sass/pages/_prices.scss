@@ -81,6 +81,9 @@
   }
 }
 
+.scroll-lock {
+  position: fixed!important;
+}
 
 
 @media (max-width: $breakpoint-lg) {
