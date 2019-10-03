@@ -46,21 +46,21 @@
       }
     }
     & .open {
-      & span {
-        &:nth-child(1) {
-          top: 4px;
-          -webkit-transform: rotateZ(45deg);
-          transform: rotateZ(45deg);
-        }
-        &:nth-child(2) {
-          background: transparent;
-        }
-        &:nth-child(3) {
-          top: 4px;
-          -webkit-transform: rotateZ(-45deg);
-          transform: rotateZ(-45deg);
-        }
-      }
+      // & span {
+        // &:nth-child(1) {
+        //   top: 4px;
+        //   -webkit-transform: rotateZ(45deg);
+        //   transform: rotateZ(45deg);
+        // }
+        // &:nth-child(2) {
+        //   background: transparent;
+        // }
+        // &:nth-child(3) {
+        //   top: 4px;
+        //   -webkit-transform: rotateZ(-45deg);
+        //   transform: rotateZ(-45deg);
+        // }
+      // }
     }
   }
 }

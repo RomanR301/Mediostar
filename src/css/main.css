@@ -3843,19 +3843,6 @@ input:-webkit-autofill {
   .inner-hamburger .hamburger-lines span:nth-child(3) {
     top: 8px;
   }
-  .inner-hamburger .open span:nth-child(1) {
-    top: 4px;
-    -webkit-transform: rotateZ(45deg);
-    transform: rotateZ(45deg);
-  }
-  .inner-hamburger .open span:nth-child(2) {
-    background: transparent;
-  }
-  .inner-hamburger .open span:nth-child(3) {
-    top: 4px;
-    -webkit-transform: rotateZ(-45deg);
-    transform: rotateZ(-45deg);
-  }
 }
 
 .inner-nav-heading {
@@ -5559,7 +5546,7 @@ button.mfp-close, button.mfp-arrow {
 }
 
 .prices {
-  margin-bottom: 40px;
+  margin-bottom: 84px;
   padding-top: 57px;
 }
 
@@ -5588,6 +5575,10 @@ button.mfp-close, button.mfp-arrow {
 
 .prices-categories {
   padding-top: 22px;
+}
+
+.prices-sidebar {
+  margin-top: 25px;
 }
 
 .prices-sidebar h2 {
