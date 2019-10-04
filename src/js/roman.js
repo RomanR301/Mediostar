@@ -60,11 +60,8 @@ $(document).ready(function() {
   var sidebar = new StickySidebar('#sidebar', {
     containerSelector: '#main-content',
     innerWrapperSelector: '.sidebar__inner',
-    topSpacing: 120,
+    topSpacing: 150,
     bottomSpacing: 80,
     minWidth: 768,
-  });
-  sidebar.addEventListener('affix.bottom.stickySidebar', function (event) {
-    console.log('Sidebar has stuck bottom of viewport.');
   });
 });
