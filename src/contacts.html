@@ -9,6 +9,7 @@
 		<title>Ramsey</title>
 		<meta name="description" content="" />
 		<link href="css/main.css" rel="stylesheet" />
+		<link href="https://api.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.css" rel="stylesheet" />
 	</head>
 	<body>
 		<header id="masthead" class="header">
@@ -96,50 +97,54 @@
 		</header>
 		<div class="body-padding"></div>
 		<section class="contacts">
-			<div class="container">
+			<div class="container-fluid p-0">
+				<div class="map" id="map"></div>
+				<!-- <div class="contacts-logo">
+					<img src="./img/404-title.svg" alt="">
+				</div> -->
 				<div class="row">
 					<div class="col-md-5">
-						<div class="contacts-main">
-							<div class="contacts-main-heading heading-1">
-								Контакти
+						<div class="contacts-info">
+							<div class="contacts-main">
+								<div class="contacts-main-heading heading-1">
+									Контакти
+								</div>
+								<div class="contacts-main-button">
+									<button class="btn btn-white">Зв’язатись з PR відділом</button>
+								</div>
 							</div>
-							<div class="contacts-main-button">
-								<button class="btn btn-white">Зв’язатись з PR відділом</button>
+							<div class="contacts-wrap contacts-list">
+								<h6 class="footer-title heading-4 --semibold">Де ми знаходимось?</h6>
+								<ul class="menu list-location">
+									<li class="menu-item">вул. Городоцька 62</li>
+								</ul>
+								<ul class="phone-list">
+									<li class="phone-list__item">
+										<a href="tel:+380933455921"><i class="icon-phone"></i> + 38 (093) 345 59 21</a>
+									</li>
+									<li class="phone-list__item">
+										<a href="tel:+380933455921"><i class="icon-phone"></i> + 38 (093) 345 59 21</a>
+									</li>
+									<li class="phone-list__item">
+										<a href="tel:+380933455921"><i class="icon-phone"></i> + 38 (093) 345 59 21</a>
+									</li>
+									<li class="phone-list__item">
+										<a href="tel:+380933455921"><i class="icon-phone"></i> + 38 (093) 345 59 21</a>
+									</li>
+									<li class="phone-list__item">
+										<a href="tel:+380933455921"><i class="icon-phone"></i> + 38 (093) 345 59 21</a>
+									</li>
+								</ul>
 							</div>
-						</div>
-						<div class="contacts-wrap contacts-list">
-							<h6 class="footer-title heading-4 --semibold">Де ми знаходимось?</h6>
-							<ul class="menu list-location">
-								<li class="menu-item">вул. Городоцька 62</li>
-							</ul>
-							<ul class="phone-list">
-								<li class="phone-list__item">
-									<a href="tel:+380933455921"><i class="icon-phone"></i> + 38 (093) 345 59 21</a>
-								</li>
-								<li class="phone-list__item">
-									<a href="tel:+380933455921"><i class="icon-phone"></i> + 38 (093) 345 59 21</a>
-								</li>
-								<li class="phone-list__item">
-									<a href="tel:+380933455921"><i class="icon-phone"></i> + 38 (093) 345 59 21</a>
-								</li>
-								<li class="phone-list__item">
-									<a href="tel:+380933455921"><i class="icon-phone"></i> + 38 (093) 345 59 21</a>
-								</li>
-								<li class="phone-list__item">
-									<a href="tel:+380933455921"><i class="icon-phone"></i> + 38 (093) 345 59 21</a>
-								</li>
-							</ul>
-						</div>
 
-						<figure class="contacts-icon default-icon">
-							<img src="img/gallery/galery1.png" alt="office icon" />
-						</figure>
+							<figure class="contacts-icon default-icon">
+								<img src="img/gallery/galery1.png" alt="office icon" />
+							</figure>
+						</div>
 					</div>
 				</div>
 
-				<div class="row m-row align-left --relative">
-					<div class="map" id="map"></div>
-				</div>
+				<div class="row m-row align-left --relative"></div>
 			</div>
 		</section>
 		<div class="footer">
@@ -358,7 +363,6 @@
 					<div class="modal-heading heading-3 --bold">
 						Надіслати повідомлення керуючій PR відділу
 					</div>
-
 					<div class="modal-content-box d-flex align-middle">
 						<div class="modal-content-image">
 							<img src="../src/img/contacts-image.jpg" alt="contact-person" />
@@ -382,7 +386,7 @@
 										<textarea name="contacts-message" placeholder="Ваше повідомлення" rows="7" required></textarea>
 									</div>
 									<div class="input-wrapper">
-											<input type="submit" class="btn btn-primary contact-submit" value="Надіслати" />
+										<input type="submit" class="btn btn-primary contact-submit" value="Надіслати" />
 									</div>
 								</form>
 							</div>
@@ -397,7 +401,9 @@
 		<script src="js/js_mediostar.min.js"></script>
 		<script src="js/sliders.min.js"></script>
 		<script src="js/magnific-popup.min.js"></script>
+		<script src="https://api.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.js"></script>
 		<script src="js/roman.js"></script>
+		<script src="js/roman-map.js"></script>
 
 		<!-- <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArLnW4Ja5741cCJivbIiAqGenWwqYhuG0" type="text/javascript"></script>
 		<script src="js/googleMaps.min.js"></script> -->

@@ -3571,8 +3571,14 @@ img {
 }
 
 .contacts {
-  padding: 34px 0;
+  padding: 0;
   position: relative;
+}
+
+.contacts-info {
+  position: absolute;
+  top: 0;
+  left: 60px;
 }
 
 .contacts__column {
@@ -3626,6 +3632,44 @@ img {
 
 .contacts-main-button button {
   padding: 12px 36px;
+}
+
+.map {
+  width: 100vw;
+  height: 700px;
+  position: absolute;
+  z-index: 0;
+}
+
+.marker {
+  background-image: url("/src/img/map-marker.svg");
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.marker:before {
+  content: '';
+  background-image: url(/src/img/404-title.svg);
+  position: absolute;
+  width: 500px;
+  height: 100px;
+  background-repeat: no-repeat;
+  top: -110px;
+  left: -200px;
+}
+
+.marker:after {
+  content: '';
+  background-image: url(/src/img/404-subtitle.svg);
+  position: absolute;
+  width: 500px;
+  height: 100px;
+  background-repeat: no-repeat;
+  top: -40px;
+  left: -200px;
 }
 
 @media (max-width: 1200px) {

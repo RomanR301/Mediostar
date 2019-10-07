@@ -76,7 +76,28 @@ $(document).ready(function() {
       $('body').css('overflow', 'visible');
   });
 
+  // mapboxgl.accessToken = 'pk.eyJ1Ijoicm9tYW5yMzAxIiwiYSI6ImNrMWdiNHRzNDBsdDMzY3FsazczZ3NvcXkifQ.RbhqVO194w3peff7hCWzwA';
+  //   var map = new mapboxgl.Map({
+  //   container: 'map',
+  //   style: 'mapbox://styles/romanr301/ck1gcg1jn04q01cqpw3b5b692',
+  //   center: [24.009, 49.840],
+  //   zoom: 16.8
+    
+    
+  // });
+  // geojson.features.forEach(function(marker) {
 
+  //   // create a HTML element for each feature
+  //   var el = document.createElement('div');
+  //   el.className = 'marker';
+  
+  //   // make a marker for each feature and add to the map
+  //   new mapboxgl.Marker(el)
+  //     .setLngLat(marker.geometry.coordinates)
+  //     .addTo(map);
+  // });
+  
+  // map.addControl(new mapboxgl.AttributionControl(), 'top-left');
 
 
 
