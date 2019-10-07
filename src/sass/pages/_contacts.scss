@@ -74,7 +74,7 @@
 
 }
 
-.contacts-main {
+.contacts-message {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -131,5 +131,44 @@
     &-heading {
       padding-bottom: 10px;
     }
+  }
+}
+@media(max-width: $breakpoint-lg) {
+  .contacts {
+    & .container-fluid {
+      display: flex;
+      flex-direction: column-reverse
+    }
+    &-info {
+      position: static;
+      padding: 20px;
+    }
+    &-address {
+      display: flex;
+      max-height: 300px;
+    }
+    &-wrap {
+      margin-right: 30px;
+      width: 50%;
+    }
+    &-icon {
+      margin-top: 0;
+      height: unset;
+      width: 50%;
+    }
+  }
+}
+@media(max-width: $breakpoint-sm) {
+  .contacts {
+    &-wrap {
+      width: 100%;
+      margin-right: 0;
+    }
+    &-icon {
+      display: none;
+    }
+  }
+  .map {
+    height: 320px;
   }
 }

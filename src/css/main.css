@@ -3619,18 +3619,18 @@ img {
   background: transparent;
 }
 
-.contacts-main {
+.contacts-message {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 17px 0 45px 0;
 }
 
-.contacts-main-heading {
+.contacts-message-heading {
   color: #fff;
 }
 
-.contacts-main-button button {
+.contacts-message-button button {
   padding: 12px 36px;
 }
 
@@ -3679,6 +3679,43 @@ img {
   }
   .contacts-main-heading {
     padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 991px) {
+  .contacts .container-fluid {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .contacts-info {
+    position: static;
+    padding: 20px;
+  }
+  .contacts-address {
+    display: flex;
+    max-height: 300px;
+  }
+  .contacts-wrap {
+    margin-right: 30px;
+    width: 50%;
+  }
+  .contacts-icon {
+    margin-top: 0;
+    height: unset;
+    width: 50%;
+  }
+}
+
+@media (max-width: 575px) {
+  .contacts-wrap {
+    width: 100%;
+    margin-right: 0;
+  }
+  .contacts-icon {
+    display: none;
+  }
+  .map {
+    height: 320px;
   }
 }
 

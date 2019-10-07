@@ -67,7 +67,7 @@ $(document).ready(function() {
   });
 
   $('.modal').hide();
-  $('.contacts-main-button').click(function() {
+  $('.contacts-message-button').click(function() {
       $('body').css('overflow', 'hidden');
       $('.modal').show();
   });
