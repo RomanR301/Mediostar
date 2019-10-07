@@ -54,6 +54,10 @@ img {
   }
 }
 
+.preventScrolling {
+  overflow: hidden;
+}
+
 .app {
   &__description {
     font-size: 16px;

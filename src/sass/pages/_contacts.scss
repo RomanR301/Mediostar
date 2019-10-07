@@ -67,3 +67,26 @@
   }
 
 }
+
+.contacts-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 17px 0 45px 0;
+  &-heading {
+    color: #fff;
+  }
+  &-button button{
+    padding: 12px 36px;
+  }
+}
+
+@media(max-width: $breakpoint-xl) {
+  .contacts-main {
+    flex-direction: column;
+    align-items: flex-start;
+    &-heading {
+      padding-bottom: 10px;
+    }
+  }
+}
