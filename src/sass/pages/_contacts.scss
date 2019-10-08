@@ -158,8 +158,42 @@
     }
   }
 }
-@media(max-width: $breakpoint-sm) {
+@media(max-width: $breakpoint-md) {
+  .map {
+    height: 320px;
+  }
+  .marker:before {
+    transform: scale(.6);
+    width: 450px;
+    height: 70px;
+    top: -90px;
+  }
+  .marker:after {
+    width: 450px;
+    top: -45px;
+    transform: scale(.7);
+  }
   .contacts {
+    &-message {
+      padding: 20px;
+      flex-direction: column;
+      &-heading {
+        margin-bottom: 12px;
+      }
+    }
+    &-info {
+      padding: 0;
+    }
+    &-wrap {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 0;
+      & .phone-list__item, .menu-item {
+        margin-bottom: 12px;
+      }
+    }
     &-wrap {
       width: 100%;
       margin-right: 0;
@@ -168,7 +202,7 @@
       display: none;
     }
   }
-  .map {
-    height: 320px;
-  }
+}
+@media(max-width: $breakpoint-sm) {
+
 }
