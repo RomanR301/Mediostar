@@ -1972,7 +1972,8 @@ img {
 }
 
 .modal {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
   position: fixed;
   top: 0;
   right: -17px;
@@ -1981,10 +1982,10 @@ img {
   z-index: 999;
   outline: 0;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.4);
   -webkit-overflow-scrolling: touch;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  transition: 0.3s all;
 }
 
 .modal-body {
@@ -2107,18 +2108,23 @@ img {
   padding-top: 9px;
 }
 
-.modal-open {
-  display: block;
+.overlay {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 20;
+  transition: .3s all;
 }
 
-.animate-in {
-  animation: modalIn 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
-  animation-iteration-count: 1;
-}
-
-.animate-away {
-  animation: modalAway 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
-  animation-iteration-count: 1;
+.modal.active,
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 @media (max-width: 767px) {

@@ -18,7 +18,7 @@ var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/romanr301/ck1gcg1jn04q01cqpw3b5b692',
   center: [24.0099, 49.8397],
-  zoom: 17.4
+  zoom: 16.4
 });
 geojson.features.forEach(function(marker) {
 

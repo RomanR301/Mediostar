@@ -107,7 +107,7 @@
 									Контакти
 								</div>
 								<div class="contacts-message-button">
-									<button class="btn btn-white">Зв’язатись з PR відділом</button>
+									<button class="btn btn-white js-open-modal" data-modal="contacts">Зв’язатись з PR відділом</button>
 								</div>
 							</div>
 							<div class="contacts-address">
@@ -401,10 +401,10 @@
 			</div>
 		</div>
 		<!-- Contact PR Department Modal -->
-		<div class="modal" id="contacts-modal">
+		<div class="modal" data-modal="contacts">
 			<div class="modal-body">
 				<div class="modal-content contacts-modal">
-					<span class="modal-close js-close-modal"> </span>
+					<span class="modal-close js-close-modal"></span>
 					<div class="modal-heading heading-3 --bold">
 						Надіслати повідомлення керуючій PR відділу
 					</div>
@@ -440,6 +440,7 @@
 				</div>
 			</div>
 		</div>
+		<div class="overlay js-overlay-modal"></div>
 		<script src="js/libs/jquery-3.4.1.js"></script>
 		<script src="js/libs/flickity.pkgd.min.js"></script>
 		<script src="js/jquery.magnific-popup.min.js"></script>
@@ -449,6 +450,7 @@
 		<script src="https://api.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.js"></script>
 		<script src="js/roman.js"></script>
 		<script src="js/roman-map.js"></script>
+		<script src="js/modal.js"></script>
 
 		<!-- <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArLnW4Ja5741cCJivbIiAqGenWwqYhuG0" type="text/javascript"></script>
 		<script src="js/googleMaps.min.js"></script> -->
