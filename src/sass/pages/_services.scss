@@ -223,6 +223,20 @@
 
 .prices-nav {
   flex-direction: column;
+  align-items: flex-start;
+  & li.current-cat-ancestor.hasSubMenu> a {
+    background-color:#2F4E74;
+  }
+  & li.cat-item.inner-nav-menu-item.current-cat> a {
+    background-color: #2F4E74;
+  }
+  & .image-arrow{
+     display:inline-block;
+     padding: 5px 20px;
+  }
+  & .services-hide {
+     display:none !important;
+  }
   & .inner-nav-menu {
     &-item {
       margin: 0 0 10px 0;
@@ -236,7 +250,8 @@
     }
   }
   & .services-subnav {
-    display: block;
+    display: flex;
+    align-items: flex-start;
     margin-top: 10px;
     padding-left: 20px;
     & li:last-of-type {
@@ -269,11 +284,25 @@
 }
 
 .-hasSubMenu {
+  &:after {
+    content: '';
+    background-image: url(/src/img/menu-arrow.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: calc(50% - 15px);
+  }
   & .services-subnav {
     display: none;
   }
   & .open {
     display: block;
+  }
+  & a {
+    padding-right: 50px;
   }
 }
 

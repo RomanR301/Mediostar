@@ -173,7 +173,7 @@
 											<td>10 хв</td>
 											<td>HydraFacial BetaPeel (алмазне шліфування+пілінг+екстракція HF+маска)</td>
 											<td>250 грн</td>
-											<td><i class="add-service"></i></td>
+											<td><i class="add-service js-open-modal" data-modal="reserve"></i></td>
 										</tr>
 										<tr>
 											<td>10 хв</td>
@@ -806,6 +806,150 @@
 				</div>
 			</div>
 		</footer>
+		<div class="modal" data-modal="reserve">
+			<div class="modal-body">
+				<div class="modal-content reserve-modal">
+					<span class="modal-close js-close-modal"></span>
+					<div class="modal-content-box d-flex align-middle">
+						<div class="form">
+							<form action="">
+								<div class="reserve-header">
+									<div class="reserve-procedure">
+										<p>Процедура:</p>
+										<input type="text" value="Верхня губа (жінки)" readonly />
+									</div>
+									<div class="reserve-price">
+										<p>Ціна:</p>
+										<input type="text" value="250 грн" readonly />
+									</div>
+								</div>
+								<div class="reserve-city">
+									<div class="select-wrapper input-wrapper">
+										<select name="reserve-city" id="reserve-city">
+											<option hidden value="Оберіть місто">Оберіть місто</option>
+											<option value="Львів">Львів</option>
+											<option value="Київ">Київ</option>
+										</select>
+									</div>
+								</div>
+								<div class="reserve-inputs">
+									<div class="reserve-pib input-wrapper">
+										<input type="text" name="reserve pib" id="" placeholder="ПІБ" />
+									</div>
+									<div class="reserve-phone input-wrapper">
+										<input type="tel" name="reserve phone" id="" placeholder="+38 (0__) ___ __ __  " />
+									</div>
+									<div class="reserve-email input-wrapper">
+										<input type="email" name="reserve email" id="" placeholder="Email" />
+									</div>
+								</div>
+								<div class="reserve-date">
+									<div class="reserve-date__day">
+										<div class="input-number-wrapper">
+											<button class="quantity-arrow-plus"></button>
+											<input type="number" class="input-number" name="reserve-day" id="" min="1" max="31" placeholder="17" />
+											<button class="quantity-arrow-minus"></button>
+										</div>
+									</div>
+									<div class="reserve-date__month">
+										<div class="select-wrapper">
+											<select name="" id="">
+												<option hidden value="Листопад">Листопад</option>
+												<option value="Січень">Січень</option>
+												<option value="Лютий">Лютий</option>
+												<option value="Березень">Березень</option>
+												<option value="Квітень">Квітень</option>
+												<option value="Травень">Травень</option>
+												<option value="Червень">Червень</option>
+												<option value="Липень">Липень</option>
+												<option value="Серпень">Серпень</option>
+												<option value="Вересень">Вересень</option>
+												<option value="Жовтень">Жовтень</option>
+												<option value="Листопад">Листопад</option>
+												<option value="Грудень">Грудень</option>
+											</select>
+										</div>
+									</div>
+									<div class="reserve-date__year">
+										<input type="text" name="" id="" placeholder="2019" />
+									</div>
+								</div>
+								<div class="reserve-time">
+									<div class="reserve-time__from">
+										<p>Час від</p>
+										<div class="time-from__hour">
+											<div class="input-number-wrapper">
+												<button class="quantity-arrow-plus"></button>
+												<input type="number" class="input-number" name="reserve-day" id="" min="1" max="31" placeholder="08" />
+												<button class="quantity-arrow-minus"></button>
+											</div>
+										</div>
+										<span>:</span>
+										<div class="time-from__minute">
+											<div class="input-number-wrapper">
+												<button class="quantity-arrow-plus"></button>
+												<input type="number" class="input-number" name="reserve-day" id="" min="1" max="31" placeholder="08" />
+												<button class="quantity-arrow-minus"></button>
+											</div>
+										</div>
+									</div>
+									<div class="reserve-time__to">
+										<p>Час до</p>
+										<div class="time-to__hour">
+											<div class="input-number-wrapper">
+												<button class="quantity-arrow-plus"></button>
+												<input type="number" class="input-number" name="reserve-day" id="" min="1" max="31" placeholder="0" />
+												<button class="quantity-arrow-minus"></button>
+											</div>
+										</div>
+										<span>:</span>
+										<div class="time-to__minute">
+											<div class="input-number-wrapper">
+												<button class="quantity-arrow-plus"></button>
+												<input type="number" class="input-number" name="reserve-day" id="" min="1" max="31" placeholder="0" />
+												<button class="quantity-arrow-minus"></button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="reserve-specialist">
+									<div class="select-wrapper input-wrapper">
+										<select name="reserve-city" id="reserve-city">
+											<option hidden value="Оберіть місто">Лікар</option>
+											<option value="Львів">Юля</option>
+											<option value="Київ">Настя</option>
+											<option value="Київ">Марія Іванівна</option>
+										</select>
+									</div>
+								</div>
+								<div class="reserve-message">
+									<textarea name="" id="" cols="30" rows="10" placeholder="Коментар"></textarea>
+								</div>
+								<div class="reserve-checkboxes">
+									<p>Ви бажаєте отримати повідомлення про запис на:</p>
+									<div class="checkbox-wrapper d-flex">
+										<label class="d-flex align-middle">
+											<input type="checkbox" name="" id="" />
+											<span class="checkmark"></span>
+											e-mail
+										</label>
+										<label class="d-flex align-middle">
+											<input type="checkbox" name="" id="" />
+											<span class="checkmark"></span>
+											номер телефону
+										</label>
+									</div>
+								</div>
+								<div class="reserve-submit">
+									<input type="submit" value="Записатись на консультацію" class="btn btn-primary" />
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="overlay js-overlay-modal"></div>
 		<script src="js/libs/jquery-3.4.1.js"></script>
 		<script src="js/libs/flickity.pkgd.min.js"></script>
 		<script src="js/jquery.magnific-popup.min.js"></script>
@@ -813,7 +957,9 @@
 		<script src="js/sliders.min.js"></script>
 		<script src="js/magnific-popup.min.js"></script>
 		<script src="js/sticky-sidebar.min.js"></script>
+
 		<script src="js/roman.js"></script>
 		<script src="js/roman.-sticky-nav.js"></script>
+		<script src="js/modal.js"></script>
 	</body>
 </html>

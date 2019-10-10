@@ -298,7 +298,7 @@ input:-webkit-autofill {
   .input-wrapper {
     margin-bottom: 24px;
   }
-  & input, textarea {
+  & input, textarea, select {
     padding: 16px 24px;
     border: 1px solid #C4C4C4;
     border-radius: 5px;
@@ -312,12 +312,165 @@ input:-webkit-autofill {
       border: 1px solid $defaultTextColor;
       outline: none;
     }
-
   }
   & input[type="submit"] {
     border-radius: 100px
   }
+  & input[type=number]::-webkit-inner-spin-button,
+  & input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+  & input[type=number]{
+    -moz-appearance: textfield;
+  }
   & textarea {
     resize: vertical;
+  }
+  & .select-wrapper {
+    position: relative; 
+    &:after {
+      content: '';
+      width: 54px;
+      right: 0;
+      height: 100%;
+      background: $accentColor;
+      background-image: url('/src/img/menu-arrow-white.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: rotate(180deg);
+      font-size: 28px;
+      position: absolute;
+      color: #434B67;
+      pointer-events: none;
+      border-radius: 5px 0px 0px 5px;
+      
+    }
+    & select {
+      width: 100%;
+      background: #fff;
+      border: 1px solid #C4C4C4;
+      border-radius: 5px;
+      padding: 17px 150px 17px 24px;
+      font-size: 14px;
+      line-height: 20px;
+      color: #7C7C7C;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+       -o-appearance: none;
+        appearance: none;
+    }
+    select::-ms-expand {
+      display: none;
+    }
+  }
+  & .spinner-button {
+      position: absolute;
+      cursor: default;
+      z-index: 2;
+      background-color: #ccc;
+      width: 14.5px;
+      text-align: center;
+      margin: 0px;
+      pointer-events: none;
+      height: 10px;
+      line-height: 10px;
+  }
+  & .input-number-wrapper {
+    position: relative;
+    & input {
+      width: 120px;
+    }
+    & button {
+      position: absolute;
+      border: none;
+      background: $accentColor;
+      width: 30%;
+      height: 50%;
+      outline: none;
+      &:before {
+        content: '';
+        background-image: url('/src/img/menu-arrow-white.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+      }
+    }
+    & .quantity-arrow-plus {
+      right: 0;
+      top: 0;
+      border-radius: 0 5px 0 0;
+      &:before {
+        content: '';
+        background-image: url('/src/img/menu-arrow-white.svg');
+      }
+    }
+    & .quantity-arrow-minus {
+      right: 0;
+      bottom: 0;
+      border-radius: 0 0 5px 0;
+      &:before {
+        transform: rotate(-180deg);
+      }
+      &:after {
+        content: '';
+        width: 100%;
+        background: #214065;
+        top: -1px;
+        position: absolute;
+        height: 2px;
+        left: 0px;
+      }
+    }
+  }
+  & .checkbox-wrapper {
+    & label {
+      position: relative;
+      font-size: 14px;
+      line-height: 26px;
+      color: #7C7C7C;
+    }
+    & input {
+      position: absolute;
+      opacity: 1;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+      &:checked ~ .checkmark {
+        background-color: $accentColor;
+      }
+      &:checked ~ .checkmark:after {
+        display: block;
+      }
+    }
+    & .checkmark {
+      height: 24px;
+      width: 24px;
+      background-color: #fff;
+      border-radius: 5px;
+      border: 1px solid $accentColor;
+      margin-right: 12px;
+      &:after {
+        content: "";
+        position: absolute;
+        display: none;
+        left: 8px;
+        top: 5px;
+        width: 7px;
+        height: 13px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
   }
 }

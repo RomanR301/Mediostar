@@ -57,13 +57,38 @@ $(document).ready(function() {
     innerNav.toggleClass("active"))
   })
 
-  $(".inner-nav-menu li.-hasSubMenu .services-dropdown").on("click", function(t) {
+  $(".inner-nav-menu li.-hasSubMenu").on("click", function(t) {
     t.preventDefault(),
     $(this).parent().parent().hasClass("isOpen") ? $(this).parent().parent().removeClass("isOpen") : ($(".inner-nav-menu li.-hasSubMenu").removeClass("isOpen"),
     $(this).parent().parent().addClass("isOpen")),
     $(".inner-nav-menu li.-hasSubMenu").each(function(t) {
-        $(".inner-nav-menu li.-hasSubMenu").eq(t).hasClass("isOpen") ? $(".inner-nav-menu li.-hasSubMenu").eq(t).find(".services-subnav").slideToggle() : $(".inner-nav-menu li.-hasSubMenu .services-subnav").eq(t).slideUp()
+        $(".inner-nav-menu li.-hasSubMenu").eq(t).hasClass("isOpen") ? $(".inner-nav-menu li.-hasSubMenu").eq(t).find(".services-subnav").slideToggle() : $(".inner-nav-menu li.-hasSubMenu").eq(t).slideUp()
     })
+  });
+
+  $(function() {
+ 
+    (function quantityProducts() {
+      var $quantityArrowMinus = $(".quantity-arrow-minus");
+      var $quantityArrowPlus = $(".quantity-arrow-plus");
+      var $quantityNum = $(".input-number");
+   
+      $quantityArrowMinus.click(quantityMinus);
+      $quantityArrowPlus.click(quantityPlus);
+   
+      function quantityMinus(e) {
+        e.preventDefault();
+        if ($quantityNum.val() > 1) {
+          $quantityNum.val(+$quantityNum.val() - 1);
+        }
+      }
+   
+      function quantityPlus(e) {
+        e.preventDefault();
+        $quantityNum.val(+$quantityNum.val() + 1);
+      }
+    })();
+   
   });
   
 

@@ -2,8 +2,10 @@
 @import "../abstracts/variables";
 
 .modal {
-  opacity: 0;
-  visibility: hidden;
+  // opacity: 0;
+  // visibility: hidden;
+  opacity: 1;
+  visibility: visible;
   position: fixed;
   top: 0;
   right: -17px;
@@ -118,11 +120,118 @@
       padding-top: 9px;
     }
   }
+  & .reserve-modal {
+    max-width: 750px;
+    padding: 36px 41px;
+    & .form {
+      max-width: 420px;
+    }
+    & .reserve-header {
+      margin-bottom: 16px;
+      & .reserve-procedure, .reserve-price {
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        line-height: 36px;
+        color: #888;
+      }
+      & input {
+        border: none;
+        outline: none;
+        font-size: 24px;
+        line-height: 36px;
+        color: $defaultTextColor;
+        margin-left: 10px;
+        padding: 0;
+      }
+    }
+    & .reserve-city {
+      max-width: 310px;
+    }
+    & .reserve-inputs {
+      max-width: 420px;
+      & input {
+        width: 100%;
+      }
+    }
+    & .reserve-date {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      &__day {
+        position: relative;
+        width: 108px;
+        & input {
+          width: unset;
+        }
+      }
+      &__month {
+        width: 166px;
+        & select {
+          padding: 17px 24px;
+          width: 100%;
+        }
+      }
+      &__year {
+        width: 116px;
+        & input {
+          padding: 17px 40px;
+          width: 100%;
+        }
+      }
+    }
+    & .reserve-time {
+      max-width: 320px;
+      &__from, &__to {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        & p {
+          font-size: 14px;
+          line-height: 20px;
+          color: #7C7C7C;
+          width: 50px;
+        }
+      }
+    }
+    & .reserve-message {
+      & textarea {
+        width: 100%;
+        height: 135px;
+      }
+    }
+    & .reserve-checkboxes {
+      padding-bottom: 20px;
+      & p {
+        font-size: 14px;
+        line-height: 26px;
+        color: #7C7C7C;
+      }
+      & .checkbox-wrapper {
+        padding-top: 8px;
+        & label:first-child {
+          margin-right: 40px;
+        }
+      }
+    }
+    & .reserve-submit {
+      & input {
+        padding: 12px 36px;
+        font-size: 16px;
+      }
+    }
+  }
 }
 
+
+
 .overlay {
-  opacity: 0;
-  visibility: hidden;
+  // opacity: 0;
+  // visibility: hidden;
+  opacity: 1;
+  visibility: visible;
   position: fixed;
   top: 0;
   left: 0;
@@ -160,6 +269,13 @@
     }
     & .contacts-modal {
       padding: 60px 36px 20px 36px;
+    }
+    & .reserve-modal {
+      padding: 16px 14px;
+      max-width: unset;
+      & .modal-content-box {
+        align-items: flex-start;
+      }
     }
   }
 }

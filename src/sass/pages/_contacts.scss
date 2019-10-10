@@ -90,12 +90,12 @@
 .map {
   width: 100vw;
   height: 700px;
-  position: absolute;
+
   z-index: 0;
 }
 
 .marker {
-  background-image: url('/src/img/map-marker.svg');
+  background-image: url('../img/map-marker.svg');
   background-size: cover;
   width: 50px;
   height: 50px;
@@ -103,7 +103,7 @@
   cursor: pointer;
   &:before {
     content: '';
-    background-image: url(/src/img/404-title.svg);
+    background-image: url('../img/404-title.svg');
     position: absolute;
     width: 500px;
     height: 100px;
@@ -113,7 +113,7 @@
   }
   &:after {
     content: '';
-    background-image: url(/src/img/404-subtitle.svg);
+    background-image: url('../img/404-subtitle.svg');
     position: absolute;
     width: 500px;
     height: 100px;
@@ -175,7 +175,7 @@
   }
   .contacts {
     &-message {
-      padding: 20px;
+      padding: 18px;
       flex-direction: column;
       &-heading {
         margin-bottom: 12px;
