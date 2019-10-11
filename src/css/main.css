@@ -2038,8 +2038,8 @@ img {
 }
 
 .modal {
-  opacity: 1;
-  visibility: visible;
+  opacity: 0;
+  visibility: hidden;
   position: fixed;
   top: 0;
   right: -17px;
@@ -2193,6 +2193,11 @@ img {
   font-size: 24px;
   line-height: 36px;
   color: #888;
+  flex-wrap: wrap;
+}
+
+.modal .reserve-modal .reserve-header p {
+  margin-right: 12px;
 }
 
 .modal .reserve-modal .reserve-header input {
@@ -2201,7 +2206,6 @@ img {
   font-size: 24px;
   line-height: 36px;
   color: #333333;
-  margin-left: 10px;
   padding: 0;
 }
 
@@ -2240,6 +2244,7 @@ img {
 .modal .reserve-modal .reserve-date__month select {
   padding: 17px 24px;
   width: 100%;
+  color: #333333;
 }
 
 .modal .reserve-modal .reserve-date__year {
@@ -2298,8 +2303,8 @@ img {
 }
 
 .overlay {
-  opacity: 1;
-  visibility: visible;
+  opacity: 0;
+  visibility: hidden;
   position: fixed;
   top: 0;
   left: 0;
@@ -2317,6 +2322,10 @@ img {
 }
 
 @media (max-width: 767px) {
+  .modal-close {
+    right: 12px;
+    top: 12px;
+  }
   .modal-content-image {
     width: 50%;
     margin: 0 auto;
@@ -2338,9 +2347,33 @@ img {
   .modal .reserve-modal {
     padding: 16px 14px;
     max-width: unset;
+    display: block;
   }
   .modal .reserve-modal .modal-content-box {
     align-items: flex-start;
+  }
+  .modal .reserve-modal .form {
+    width: 100%;
+    max-width: unset;
+  }
+  .modal .reserve-modal .form .reserve-procedure, .modal .reserve-modal .form .reserve-price {
+    font-size: 16px;
+  }
+  .modal .reserve-modal .form .reserve-procedure input, .modal .reserve-modal .form .reserve-price input {
+    font-size: 16px;
+  }
+  .modal .reserve-modal .form .reserve-city, .modal .reserve-modal .form .reserve-inputs {
+    max-width: unset;
+  }
+  .modal .reserve-modal .form .reserve-date {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .modal .reserve-modal .form .reserve-date__day, .modal .reserve-modal .form .reserve-date__month {
+    margin-bottom: 20px;
+  }
+  .modal .reserve-modal .form .reserve-time .input-number-wrapper input {
+    width: 90px;
   }
 }
 

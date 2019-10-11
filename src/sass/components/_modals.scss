@@ -2,10 +2,10 @@
 @import "../abstracts/variables";
 
 .modal {
-  // opacity: 0;
-  // visibility: hidden;
-  opacity: 1;
-  visibility: visible;
+  opacity: 0;
+  visibility: hidden;
+  // opacity: 1;
+  // visibility: visible;
   position: fixed;
   top: 0;
   right: -17px;
@@ -134,6 +134,10 @@
         font-size: 24px;
         line-height: 36px;
         color: #888;
+        flex-wrap: wrap;
+      }
+      & p {
+        margin-right: 12px;
       }
       & input {
         border: none;
@@ -141,7 +145,6 @@
         font-size: 24px;
         line-height: 36px;
         color: $defaultTextColor;
-        margin-left: 10px;
         padding: 0;
       }
     }
@@ -171,6 +174,7 @@
         & select {
           padding: 17px 24px;
           width: 100%;
+          color: $defaultTextColor;
         }
       }
       &__year {
@@ -228,10 +232,10 @@
 
 
 .overlay {
-  // opacity: 0;
-  // visibility: hidden;
-  opacity: 1;
-  visibility: visible;
+  opacity: 0;
+  visibility: hidden;
+  // opacity: 1;
+  // visibility: visible;
   position: fixed;
   top: 0;
   left: 0;
@@ -250,6 +254,10 @@
 
 @media(max-width: $breakpoint-md) {
   .modal {
+    &-close {
+      right: 12px;
+      top: 12px;
+    }
     &-content {
       &-image {
         width: 50%;
@@ -273,9 +281,36 @@
     & .reserve-modal {
       padding: 16px 14px;
       max-width: unset;
+      display: block;
       & .modal-content-box {
         align-items: flex-start;
       }
+      & .form {
+        width: 100%;
+        max-width: unset;
+        & .reserve-procedure, .reserve-price {
+          font-size: 16px;
+          & input {
+            font-size: 16px;
+          }
+        }
+        & .reserve-city, .reserve-inputs {
+          max-width: unset;
+        }
+        & .reserve-date {
+          flex-direction: column;
+          align-items: flex-start;
+          &__day, &__month {
+            margin-bottom: 20px;
+          }
+        }
+        & .reserve-time {
+          & .input-number-wrapper input {
+            width: 90px;
+          }
+        }
+      }
+
     }
   }
 }

@@ -172,26 +172,26 @@
 										<tr>
 											<td>10 хв</td>
 											<td>HydraFacial BetaPeel (алмазне шліфування+пілінг+екстракція HF+маска)</td>
-											<td>250 грн</td>
+											<td>22 грн</td>
+											<td><i class="add-service js-open-modal" data-modal="reserve"></i></td>
+										</tr>
+										<tr>
+											<td>10 хв</td>
+											<td>Верхня губа (жінки)</td>
+											<td>33 грн</td>
+											<td><i class="add-service js-open-modal" data-modal="reserve"></i></td>
+										</tr>
+										<tr>
+											<td>10 хв</td>
+											<td>якийсь текст</td>
+											<td>якась ціна</td>
 											<td><i class="add-service js-open-modal" data-modal="reserve"></i></td>
 										</tr>
 										<tr>
 											<td>10 хв</td>
 											<td>Верхня губа (жінки)</td>
 											<td>250 грн</td>
-											<td><i class="add-service"></i></td>
-										</tr>
-										<tr>
-											<td>10 хв</td>
-											<td>Верхня губа (жінки)</td>
-											<td>250 грн</td>
-											<td><i class="add-service"></i></td>
-										</tr>
-										<tr>
-											<td>10 хв</td>
-											<td>Верхня губа (жінки)</td>
-											<td>250 грн</td>
-											<td><i class="add-service"></i></td>
+											<td><i class="add-service js-open-modal" data-modal="reserve"></i></td>
 										</tr>
 										<tr>
 											<td>10 хв</td>
@@ -816,11 +816,11 @@
 								<div class="reserve-header">
 									<div class="reserve-procedure">
 										<p>Процедура:</p>
-										<input type="text" value="Верхня губа (жінки)" readonly />
+										<input type="text" class="reserve-procedure-field" name="reserve-procedure" value="" readonly />
 									</div>
 									<div class="reserve-price">
 										<p>Ціна:</p>
-										<input type="text" value="250 грн" readonly />
+										<input type="text" class="input-price-field" name="reserve-price" value="" readonly />
 									</div>
 								</div>
 								<div class="reserve-city">
@@ -834,44 +834,43 @@
 								</div>
 								<div class="reserve-inputs">
 									<div class="reserve-pib input-wrapper">
-										<input type="text" name="reserve pib" id="" placeholder="ПІБ" />
+										<input type="text" name="reserve-pib" id="" placeholder="ПІБ" />
 									</div>
 									<div class="reserve-phone input-wrapper">
-										<input type="tel" name="reserve phone" id="" placeholder="+38 (0__) ___ __ __  " />
+										<input type="tel" name="reserve-phone" id="" placeholder="+38 (0__) ___ __ __  " />
 									</div>
 									<div class="reserve-email input-wrapper">
-										<input type="email" name="reserve email" id="" placeholder="Email" />
+										<input type="email" name="reserve-email" id="" placeholder="Email" />
 									</div>
 								</div>
 								<div class="reserve-date">
 									<div class="reserve-date__day">
 										<div class="input-number-wrapper">
 											<button class="quantity-arrow-plus"></button>
-											<input type="number" class="input-number" name="reserve-day" id="" min="1" max="31" placeholder="17" />
+											<input type="number" class="input-number date-day" name="reserve-day" id="" min="1" max="31" value="" />
 											<button class="quantity-arrow-minus"></button>
 										</div>
 									</div>
 									<div class="reserve-date__month">
 										<div class="select-wrapper">
-											<select name="" id="">
-												<option hidden value="Листопад">Листопад</option>
-												<option value="Січень">Січень</option>
-												<option value="Лютий">Лютий</option>
-												<option value="Березень">Березень</option>
-												<option value="Квітень">Квітень</option>
-												<option value="Травень">Травень</option>
-												<option value="Червень">Червень</option>
-												<option value="Липень">Липень</option>
-												<option value="Серпень">Серпень</option>
-												<option value="Вересень">Вересень</option>
-												<option value="Жовтень">Жовтень</option>
-												<option value="Листопад">Листопад</option>
-												<option value="Грудень">Грудень</option>
+											<select name="reserve-month" class="reserve-month" id="">
+												<option value="1">Січень</option>
+												<option value="2">Лютий</option>
+												<option value="3">Березень</option>
+												<option value="4">Квітень</option>
+												<option value="5">Травень</option>
+												<option value="6">Червень</option>
+												<option value="7">Липень</option>
+												<option value="8">Серпень</option>
+												<option value="9">Вересень</option>
+												<option value="10">Жовтень</option>
+												<option value="11">Листопад</option>
+												<option value="12">Грудень</option>
 											</select>
 										</div>
 									</div>
 									<div class="reserve-date__year">
-										<input type="text" name="" id="" placeholder="2019" />
+										<input type="text" class="reserve-year" name="reserve-year" id="" placeholder="" />
 									</div>
 								</div>
 								<div class="reserve-time">
@@ -880,7 +879,7 @@
 										<div class="time-from__hour">
 											<div class="input-number-wrapper">
 												<button class="quantity-arrow-plus"></button>
-												<input type="number" class="input-number" name="reserve-day" id="" min="1" max="31" placeholder="08" />
+												<input type="number" class="input-number date-hour" name="from-hour" id="" min="0" max="24" value="15" />
 												<button class="quantity-arrow-minus"></button>
 											</div>
 										</div>
@@ -888,7 +887,7 @@
 										<div class="time-from__minute">
 											<div class="input-number-wrapper">
 												<button class="quantity-arrow-plus"></button>
-												<input type="number" class="input-number" name="reserve-day" id="" min="1" max="31" placeholder="08" />
+												<input type="number" class="input-number date-minute" name="from-minute" id="" min="0" max="60" value="30"/>
 												<button class="quantity-arrow-minus"></button>
 											</div>
 										</div>
@@ -898,7 +897,7 @@
 										<div class="time-to__hour">
 											<div class="input-number-wrapper">
 												<button class="quantity-arrow-plus"></button>
-												<input type="number" class="input-number" name="reserve-day" id="" min="1" max="31" placeholder="0" />
+												<input type="number" class="input-number date-hour" name="to-hour" id="" min="0" max="24" value="16"/>
 												<button class="quantity-arrow-minus"></button>
 											</div>
 										</div>
@@ -906,7 +905,7 @@
 										<div class="time-to__minute">
 											<div class="input-number-wrapper">
 												<button class="quantity-arrow-plus"></button>
-												<input type="number" class="input-number" name="reserve-day" id="" min="1" max="31" placeholder="0" />
+												<input type="number" class="input-number date-minute" name="to-minute" id="" min="0" max="60" value="30" />
 												<button class="quantity-arrow-minus"></button>
 											</div>
 										</div>
@@ -914,8 +913,8 @@
 								</div>
 								<div class="reserve-specialist">
 									<div class="select-wrapper input-wrapper">
-										<select name="reserve-city" id="reserve-city">
-											<option hidden value="Оберіть місто">Лікар</option>
+										<select name="reserve-specialist" id="reserve-specialist">
+											<option hidden value="Оберіть спеціаліста">Лікар</option>
 											<option value="Львів">Юля</option>
 											<option value="Київ">Настя</option>
 											<option value="Київ">Марія Іванівна</option>
@@ -923,18 +922,18 @@
 									</div>
 								</div>
 								<div class="reserve-message">
-									<textarea name="" id="" cols="30" rows="10" placeholder="Коментар"></textarea>
+									<textarea name="reserve-message" id="" cols="30" rows="10" placeholder="Коментар"></textarea>
 								</div>
 								<div class="reserve-checkboxes">
 									<p>Ви бажаєте отримати повідомлення про запис на:</p>
 									<div class="checkbox-wrapper d-flex">
 										<label class="d-flex align-middle">
-											<input type="checkbox" name="" id="" />
+											<input type="checkbox" name="reserve-inform-email" id="" />
 											<span class="checkmark"></span>
 											e-mail
 										</label>
 										<label class="d-flex align-middle">
-											<input type="checkbox" name="" id="" />
+											<input type="checkbox" name="reserve-inform-phone" id="" />
 											<span class="checkmark"></span>
 											номер телефону
 										</label>

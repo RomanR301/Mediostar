@@ -57,42 +57,56 @@ $(document).ready(function() {
     innerNav.toggleClass("active"))
   })
 
-  $(".inner-nav-menu li.-hasSubMenu").on("click", function(t) {
-    t.preventDefault(),
-    $(this).parent().parent().hasClass("isOpen") ? $(this).parent().parent().removeClass("isOpen") : ($(".inner-nav-menu li.-hasSubMenu").removeClass("isOpen"),
-    $(this).parent().parent().addClass("isOpen")),
-    $(".inner-nav-menu li.-hasSubMenu").each(function(t) {
-        $(".inner-nav-menu li.-hasSubMenu").eq(t).hasClass("isOpen") ? $(".inner-nav-menu li.-hasSubMenu").eq(t).find(".services-subnav").slideToggle() : $(".inner-nav-menu li.-hasSubMenu").eq(t).slideUp()
-    })
-  });
+  // $(".inner-nav-menu li.-hasSubMenu").on("click", function(t) {
+  //   t.preventDefault(),
+  //   $(this).parent().parent().hasClass("isOpen") ? $(this).parent().parent().removeClass("isOpen") : ($(".inner-nav-menu li.-hasSubMenu").removeClass("isOpen"),
+  //   $(this).parent().parent().addClass("isOpen")),
+  //   $(".inner-nav-menu li.-hasSubMenu").each(function(t) {
+  //       $(".inner-nav-menu li.-hasSubMenu").eq(t).hasClass("isOpen") ? $(".inner-nav-menu li.-hasSubMenu").eq(t).find(".services-subnav").slideToggle() : $(".inner-nav-menu li.-hasSubMenu").eq(t).slideUp()
+  //   })
+  // });
 
-  $(function() {
- 
-    (function quantityProducts() {
-      var $quantityArrowMinus = $(".quantity-arrow-minus");
-      var $quantityArrowPlus = $(".quantity-arrow-plus");
-      var $quantityNum = $(".input-number");
-   
-      $quantityArrowMinus.click(quantityMinus);
-      $quantityArrowPlus.click(quantityPlus);
-   
-      function quantityMinus(e) {
-        e.preventDefault();
-        if ($quantityNum.val() > 1) {
-          $quantityNum.val(+$quantityNum.val() - 1);
+
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    $('.date-day').val(dd);
+    $('.reserve-year').val(yyyy);
+    $('.reserve-month').val(mm);
+    
+
+    $(".quantity-arrow-plus").click(function(e) {
+      e.preventDefault();
+      updateValue(this, 1);
+    });
+    $(".quantity-arrow-minus").click(function(e) {
+      e.preventDefault();
+        updateValue(this, -1);
+    });
+
+    function updateValue(obj, delta) {
+        let item = $(obj).parent().find("input");
+        let newValue = parseInt(item.val(), 10) + delta;
+        if (item.attr('max') >= newValue) {
+          item.val(Math.max(newValue, 0));
         }
-      }
-   
-      function quantityPlus(e) {
-        e.preventDefault();
-        $quantityNum.val(+$quantityNum.val() + 1);
-      }
-    })();
-   
-  });
-  
+    }
 
+    $(".reserve-city select, .reserve-specialist select").click(function () {
+      $(this).css('color', '#333');
+    }); 
 
+    $('.add-service').on('click', function(){
+      let inputProcedure = $('.reserve-procedure-field');
+      let inputPrice = $('.input-price-field');
+      let currRow = $(this).closest('tr');
+      let procedure = currRow.find('td:eq(1)').text();
+      let price = currRow.find('td:eq(2)').text();
+      inputProcedure.val(procedure);
+      inputPrice.val(price);
+    })
 
   // $('.modal').hide();
   // $('.contacts-message-button').click(function() {
