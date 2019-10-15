@@ -8,7 +8,7 @@
   // visibility: visible;
   position: fixed;
   top: 0;
-  right: -17px;
+  right: 0;
   bottom: 0;
   left: 0;
   z-index: 999;
@@ -146,6 +146,7 @@
         line-height: 36px;
         color: $defaultTextColor;
         padding: 0;
+        width: 60%;
       }
     }
     & .reserve-city {
@@ -227,8 +228,69 @@
       }
     }
   }
+  & .online-reserve {
+    width: unset;
+    margin: 0;
+    top: 101px;
+    & .online-reserve-call {
+      position: absolute;
+      top: 64px;
+      right: 40px;
+      & .reserve-call-wrapper {
+        border-radius: 100%;
+        width: 80px;
+        height: 80px;
+        background: $accentColor;
+        position: relative;
+        cursor: pointer;
+        @include transition (.3);
+        &:hover {
+          background: #1C60B3;
+        }
+      }
+      & .reserve-call-img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    & .reserve-date__day, .reserve-date__month {
+      margin-right: 20px;
+    }
+    & .reserve-date__year input {
+      padding: 17px 39px;
+    }
+    & .online-reserve-procedure {
+      & input {
+        width: 100%;
+      }
+    }
+  }
+  & .online-reserve-callback {
+    width: 502px;
+    height: 80%;
+    & .online-callback-back {
+      cursor: pointer;
+      position: absolute;
+      left: 60px;
+      bottom: 40px;
+      & .back-img {
+        padding-right: 12px;
+        & img {
+          transform: rotate(90deg);
+        }
+      }
+      & .back-text {
+        color: $accentColor;
+      }
+    }
+  }
 }
 
+.modal-online-reserve {
+  z-index: 40;
+}
 
 
 .overlay {
@@ -250,6 +312,14 @@
 .overlay.active{
    opacity: 1;
    visibility: visible;
+}
+
+@media(max-width: $breakpoint-lg) {
+  .modal {
+    & .online-reserve {
+      top: 26px;
+    }
+  }
 }
 
 @media(max-width: $breakpoint-md) {
@@ -310,12 +380,35 @@
           }
         }
       }
-
+    }
+    & .online-reserve {
+      display: table;
+      & .online-reserve-call {
+        top: 56px;
+        & .reserve-call-wrapper {
+          width: 70px;
+          height: 70px;
+        }
+      }
+      & .reserve-city {
+        & .select-wrapper {
+          width: 60%;
+          & select {
+            padding: 17px 60px 17px 24px;
+          }
+        }
+      }
+    }
+    & .online-reserve-callback {
+      width: 352px;
     }
   }
 }
 
 
+.modal-open {
+  overflow: hidden;
+}
 
 // .modal {
 //   display: none;

@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
    var modalButtons = document.querySelectorAll('.js-open-modal'),
        overlay      = document.querySelector('.js-overlay-modal'),
        closeButtons = document.querySelectorAll('.js-close-modal');
+       closeCallback = document.querySelector('.callback-close');
+       onlineReg    = document.querySelector('.online-registration')
+       bodyOverflow = document.querySelector('body');
    modalButtons.forEach(function(item){
       item.addEventListener('click', function(e) {
          e.preventDefault();
@@ -11,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
              modalElem = document.querySelector('.modal[data-modal="' + modalId + '"]');
          modalElem.classList.add('active');
          overlay.classList.add('active');
+         bodyOverflow.classList.add('modal-open')
+         onlineReg.classList.add('online-registration-active');
       }); // end click
    }); // end foreach
    closeButtons.forEach(function(item){
@@ -18,6 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
          var parentModal = this.closest('.modal');
          parentModal.classList.remove('active');
          overlay.classList.remove('active');
+         onlineReg.classList.remove('online-registration-active');
+         bodyOverflow.classList.remove('modal-open');
       });
    }); // end foreach
     document.body.addEventListener('keyup', function (e) {
@@ -31,4 +38,25 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.modal.active').classList.remove('active');
         this.classList.remove('active');
     });
+
 }); // end ready
+
+
+// addition to callback modal inside online register modal
+$('.online-reserve-call').click(function(){
+    $('.modal-online-reserve').removeClass('active');
+    $('.online-reserve-callback').addClass('active');
+});
+
+$('.online-callback-back').click(function(){
+    $('.online-reserve-callback').removeClass('active');
+    $('.online-reserve-main').addClass('active');
+})
+
+$('.callback-close').click(function(){
+    $('.modal').removeClass('active');
+    $('.overlay').removeClass('active');
+    $('body').removeClass('modal-open');
+    $('.online-registration').removeClass('online-registration-active');
+})
+

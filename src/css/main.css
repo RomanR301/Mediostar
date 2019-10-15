@@ -1238,6 +1238,10 @@ img {
   margin-bottom: 20px;
 }
 
+.mb-30 {
+  margin-bottom: 30px;
+}
+
 .pt-60 {
   padding-top: 60px;
 }
@@ -2021,6 +2025,10 @@ img {
   background: #1C60B3;
 }
 
+.online-registration-active {
+  left: -100%;
+}
+
 @media (max-width: 991px) {
   .online-registration {
     position: absolute;
@@ -2042,7 +2050,7 @@ img {
   visibility: hidden;
   position: fixed;
   top: 0;
-  right: -17px;
+  right: 0;
   bottom: 0;
   left: 0;
   z-index: 999;
@@ -2207,6 +2215,7 @@ img {
   line-height: 36px;
   color: #333333;
   padding: 0;
+  width: 60%;
 }
 
 .modal .reserve-modal .reserve-city {
@@ -2302,6 +2311,82 @@ img {
   font-size: 16px;
 }
 
+.modal .online-reserve {
+  width: unset;
+  margin: 0;
+  top: 101px;
+}
+
+.modal .online-reserve .online-reserve-call {
+  position: absolute;
+  top: 64px;
+  right: 40px;
+}
+
+.modal .online-reserve .online-reserve-call .reserve-call-wrapper {
+  border-radius: 100%;
+  width: 80px;
+  height: 80px;
+  background: #2F4E74;
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.modal .online-reserve .online-reserve-call .reserve-call-wrapper:hover {
+  background: #1C60B3;
+}
+
+.modal .online-reserve .online-reserve-call .reserve-call-img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal .online-reserve .reserve-date__day, .modal .online-reserve .reserve-date__month {
+  margin-right: 20px;
+}
+
+.modal .online-reserve .reserve-date__year input {
+  padding: 17px 39px;
+}
+
+.modal .online-reserve .online-reserve-procedure input {
+  width: 100%;
+}
+
+.modal .online-reserve-callback {
+  width: 502px;
+  height: 80%;
+}
+
+.modal .online-reserve-callback .online-callback-back {
+  cursor: pointer;
+  position: absolute;
+  left: 60px;
+  bottom: 40px;
+}
+
+.modal .online-reserve-callback .online-callback-back .back-img {
+  padding-right: 12px;
+}
+
+.modal .online-reserve-callback .online-callback-back .back-img img {
+  transform: rotate(90deg);
+}
+
+.modal .online-reserve-callback .online-callback-back .back-text {
+  color: #2F4E74;
+}
+
+.modal-online-reserve {
+  z-index: 40;
+}
+
 .overlay {
   opacity: 0;
   visibility: hidden;
@@ -2319,6 +2404,12 @@ img {
 .overlay.active {
   opacity: 1;
   visibility: visible;
+}
+
+@media (max-width: 991px) {
+  .modal .online-reserve {
+    top: 26px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2375,6 +2466,29 @@ img {
   .modal .reserve-modal .form .reserve-time .input-number-wrapper input {
     width: 90px;
   }
+  .modal .online-reserve {
+    display: table;
+  }
+  .modal .online-reserve .online-reserve-call {
+    top: 56px;
+  }
+  .modal .online-reserve .online-reserve-call .reserve-call-wrapper {
+    width: 70px;
+    height: 70px;
+  }
+  .modal .online-reserve .reserve-city .select-wrapper {
+    width: 60%;
+  }
+  .modal .online-reserve .reserve-city .select-wrapper select {
+    padding: 17px 60px 17px 24px;
+  }
+  .modal .online-reserve-callback {
+    width: 352px;
+  }
+}
+
+.modal-open {
+  overflow: hidden;
 }
 
 .subscribe {
@@ -3816,6 +3930,21 @@ img {
   left: 60px;
 }
 
+.contacts-info .contacts-message {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 17px 0 45px 0;
+}
+
+.contacts-info .contacts-message-heading {
+  color: #fff;
+}
+
+.contacts-info .contacts-message-button button {
+  padding: 12px 36px;
+}
+
 .contacts__column {
   z-index: 3;
   position: relative;
@@ -3852,21 +3981,6 @@ img {
 .contacts .form-control__input, .contacts .form-control__area {
   padding: 20px 24px;
   background: transparent;
-}
-
-.contacts-message {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 17px 0 45px 0;
-}
-
-.contacts-message-heading {
-  color: #fff;
-}
-
-.contacts-message-button button {
-  padding: 12px 36px;
 }
 
 .map {
@@ -4641,7 +4755,7 @@ input:-webkit-autofill {
     position: fixed;
     height: calc(100vh - 62px);
     overflow-y: auto;
-    top: 61px;
+    top: 70px;
     right: -110%;
     width: 100%;
     background: #F4F9FF;
@@ -5247,6 +5361,11 @@ input:-webkit-autofill {
   position: relative;
 }
 
+.gallery .inner-hamburger {
+  right: 20px;
+  top: 36px;
+}
+
 .gallery-heading {
   padding-right: 20px;
   font-family: 'Antqua';
@@ -5274,7 +5393,7 @@ input:-webkit-autofill {
 }
 
 .gallery-item {
-  height: 100%;
+  height: 370px;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
@@ -5400,9 +5519,15 @@ button.mfp-close, button.mfp-arrow {
   }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 767px) {
   .gallery-item {
     height: 300px;
+  }
+}
+
+@media (max-width: 575px) {
+  .gallery-item {
+    height: 340px;
   }
   .video-item iframe {
     width: 100%;
@@ -6203,9 +6328,19 @@ button.mfp-close, button.mfp-arrow {
   background-color: #2F4E74;
 }
 
+.prices-nav li.cat-item.inner-nav-menu-item.current-cat > a {
+  color: #fff;
+}
+
+.prices-nav li.current-cat-ancestor.hasSubMenu > a {
+  color: #fff;
+}
+
 .prices-nav .image-arrow {
-  display: inline-block;
-  padding: 5px 20px;
+  position: absolute;
+  right: 0;
+  padding: 20px 20px 15px 20px;
+  top: 0;
 }
 
 .prices-nav .services-hide {
@@ -6223,7 +6358,7 @@ button.mfp-close, button.mfp-arrow {
 }
 
 .prices-nav .services-subnav {
-  display: flex;
+  display: block;
   align-items: flex-start;
   margin-top: 10px;
   padding-left: 20px;
@@ -6233,52 +6368,9 @@ button.mfp-close, button.mfp-arrow {
   margin: 0;
 }
 
-.prices-nav i {
-  position: absolute;
-  top: 0%;
-  width: 36px;
-  height: 40px;
-  z-index: 99;
-}
-
-.prices-nav i:before {
-  content: '';
-  background-image: url("/src/img/menu-arrow.svg");
-  background-repeat: no-repeat;
-  width: 12px;
-  height: 6px;
-  top: 50%;
-  right: 15px;
-  position: absolute;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
-
-.-hasSubMenu:after {
-  content: '';
-  background-image: url(/src/img/menu-arrow.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 60px;
-  height: 30px;
-  position: absolute;
-  right: 0;
-  top: calc(50% - 15px);
-}
-
-.-hasSubMenu .services-subnav {
-  display: none;
-}
-
-.-hasSubMenu .open {
-  display: block;
-}
-
-.-hasSubMenu a {
-  padding-right: 50px;
+.hasSubMenu > a {
+  position: relative;
+  padding-right: 46px;
 }
 
 @media (max-width: 767px) {

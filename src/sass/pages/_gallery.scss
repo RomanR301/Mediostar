@@ -2,6 +2,10 @@
 @import "../abstracts/variables";
 
 .gallery {
+  & .inner-hamburger {
+    right: 20px;
+    top: 36px;
+  }
   padding-top: 57px;
   margin-bottom: 0;
   position: relative;
@@ -32,7 +36,7 @@
     padding-top: 30px;
   }
   &-item {
-    height: 100%;
+    height: 370px;
     border-radius: 10px;
     overflow: hidden;
     position: relative;
@@ -156,10 +160,14 @@ button.mfp-close, button.mfp-arrow{
     }
   }
 }
-
-@media (max-width: $breakpoint-sm) {
+@media (max-width: $breakpoint-md) {
   .gallery-item {
     height: 300px;
+  }
+}
+@media (max-width: $breakpoint-sm) {
+  .gallery-item {
+    height: 340px;
   }
   .video-item {
     & iframe {

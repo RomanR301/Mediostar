@@ -104,9 +104,68 @@ $(document).ready(function() {
       let currRow = $(this).closest('tr');
       let procedure = currRow.find('td:eq(1)').text();
       let price = currRow.find('td:eq(2)').text();
-      inputProcedure.val(procedure);
-      inputPrice.val(price);
+      inputProcedure.attr('value', procedure);
+      inputProcedure.attr('title', procedure);
+      inputPrice.attr('value', price);
     })
+
+
+    $(document.body).on("click", ".image-arrow", function(e) {
+      e.preventDefault();
+      if (
+        $(this)
+          .parent()
+          .next("ul")
+          .hasClass("services-hide")
+      ) {
+        $(this)
+          .parent()
+          .next("ul")
+          .removeClass("services-hide");
+        $parr = $(this).parent();
+        $(this).remove();
+        $($parr).append("<img src='https://www.kusmirchuk.top/wp-content/themes/mediostar/src/img/menu-arrow-white.svg' class='image-arrow'></img>");
+      } else {
+        $(this)
+          .parent()
+          .next("ul")
+          .addClass("services-hide");
+        $parr = $(this).parent();
+        $(this).remove();
+        $($parr).append("<img src='https://www.kusmirchuk.top/wp-content/themes/mediostar/src/img/menu-arrow.svg' class='image-arrow'></img>");
+      }
+    });
+
+    $(document).ready(function() {
+      $("li.cat-item.inner-nav-menu-item.hasSubMenu>a ").append("<img src='https://www.kusmirchuk.top/wp-content/themes/mediostar/src/img/menu-arrow.svg' class='image-arrow'></img>");
+
+      $(".cat-item-116").each(function() {
+        $(this)
+          .parents("ul")
+          .removeClass("services-hide");
+
+        $(this)
+          .parents("ul")
+          .prev("a")
+          .children()
+          .hide();
+        $(this)
+          .parents("ul")
+          .prev("a")
+          .append("<img src='https://www.kusmirchuk.top/wp-content/themes/mediostar/src/img/menu-arrow-white.svg' class='image-arrow'></img>");
+      });
+    });
+
+
+    
+
+
+
+    // if ($('.modal-online-reserve').hasClass('active')) {
+    //   $('.online-registration').addClass('online-registration-active');
+    // } else {
+    //   null
+    // }
 
   // $('.modal').hide();
   // $('.contacts-message-button').click(function() {

@@ -143,6 +143,12 @@
   }
 }
 
+.online-registration-active {
+  left: -100%;
+}
+
+
+
 @media (max-width: $breakpoint-lg) {
   .online-registration {
     position: absolute;
