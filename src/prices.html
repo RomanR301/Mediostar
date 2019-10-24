@@ -808,52 +808,41 @@
 		</footer>
 		<div class="modal" data-modal="reserve">
 			<div class="modal-body">
-				<div class="modal-content reserve-modal">
+				<div class="modal-content modal-reserve">
 					<span class="modal-close js-close-modal"></span>
 					<div class="modal-content-box d-flex align-middle">
 						<div class="form">
 							<form action="">
-								<div class="reserve-header">
-									<div class="reserve-procedure">
-										<p>Процедура:</p>
-										<input type="text" class="reserve-procedure-field" name="reserve-procedure" readonly />
-									</div>
-									<div class="reserve-price">
-										<p>Ціна:</p>
-										<input type="text" class="input-price-field" name="reserve-price" value="" readonly />
-									</div>
-								</div>
-								<div class="reserve-city">
-									<div class="select-wrapper input-wrapper">
-										<select name="reserve-city" id="reserve-city">
-											<option hidden value="Оберіть місто">Оберіть місто</option>
-											<option value="Львів">Львів</option>
-											<option value="Київ">Київ</option>
-										</select>
-									</div>
-								</div>
-								<div class="reserve-inputs">
-									<div class="reserve-pib input-wrapper">
-										<input type="text" name="reserve-pib" id="" placeholder="ПІБ" />
-									</div>
-									<div class="reserve-phone input-wrapper">
-										<input type="tel" name="reserve-phone" id="" placeholder="+38 (0__) ___ __ __  " />
-									</div>
-									<div class="reserve-email input-wrapper">
-										<input type="email" name="reserve-email" id="" placeholder="Email" />
-									</div>
-								</div>
-								<div class="reserve-date">
-									<div class="reserve-date__day">
-										<div class="input-number-wrapper">
-											<button class="quantity-arrow-plus"></button>
-											<input type="number" class="input-number date-day" name="reserve-day" id="" min="1" max="31" value="" />
-											<button class="quantity-arrow-minus"></button>
+								<div class="form-group">
+									<div class="reserve-header">
+										<div class="reserve-procedure">
+											<p>Процедура:</p>
+											<input type="text" class="reserve-procedure-field" name="reserve-procedure" readonly />
+										</div>
+										<div class="reserve-price">
+											<p>Ціна:</p>
+											<input type="text" class="input-price-field" name="reserve-price" value="" readonly />
 										</div>
 									</div>
-									<div class="reserve-date__month">
-										<div class="select-wrapper">
-											<select name="reserve-month" class="reserve-month" id="">
+								</div>
+								<div class="form-group">
+									<input type="text" class="form-input" name="reserve-pib" id="" placeholder="ПІБ" />
+								</div>
+								<div class="form-group">
+									<input type="tel" class="form-input" name="reserve-phone" id="" placeholder="+38 (0__) ___ __ __  " />
+								</div>
+								<div class="form-group">
+									<input type="email" class="form-input" name="reserve-email" id="" placeholder="Email" />
+								</div>
+								<div class="form-group">
+									<div class="reserve-date">
+										<div class="form-number-wrapper reserve-date__day">
+											<button class="quantity-arrow-plus"></button>
+											<input type="number" class="form-input date-day" name="reserve-day" id="" min="1" max="31" value="" />
+											<button class="quantity-arrow-minus"></button>
+										</div>
+										<div class="form-select-wrapper reserve-date__month">
+											<select name="reserve-month" class="reserve-month form__select" id="">
 												<option value="1">Січень</option>
 												<option value="2">Лютий</option>
 												<option value="3">Березень</option>
@@ -868,52 +857,46 @@
 												<option value="12">Грудень</option>
 											</select>
 										</div>
-									</div>
-									<div class="reserve-date__year">
-										<input type="text" class="reserve-year" name="reserve-year" id="" placeholder="" />
+										<div class="reserve-date__year">
+											<input type="text" class="form-input reserve-year" name="reserve-year" id="" placeholder="" />
+										</div>
 									</div>
 								</div>
-								<div class="reserve-time">
-									<div class="reserve-time__from">
-										<p>Час від</p>
-										<div class="time-from__hour">
-											<div class="input-number-wrapper">
+								<div class="form-group">
+									<div class="reserve-time">
+										<div class="reserve-time__from">
+											<p>Час від</p>
+											<div class="form-number-wrapper">
 												<button class="quantity-arrow-plus"></button>
-												<input type="number" class="input-number date-hour" name="from-hour" id="" min="0" max="24" value="15" />
+												<input type="number" class="form-input date-hour" name="from-hour" id="" min="0" max="24" value="15" />
+												<button class="quantity-arrow-minus"></button>
+											</div>
+											<span>:</span>
+											<div class="form-number-wrapper">
+												<button class="quantity-arrow-plus"></button>
+												<input type="number" class="form-input date-minute" name="from-minute" id="" min="0" max="60" value="30" />
 												<button class="quantity-arrow-minus"></button>
 											</div>
 										</div>
-										<span>:</span>
-										<div class="time-from__minute">
-											<div class="input-number-wrapper">
+										<div class="reserve-time__to">
+											<p>Час до</p>
+											<div class="form-number-wrapper">
 												<button class="quantity-arrow-plus"></button>
-												<input type="number" class="input-number date-minute" name="from-minute" id="" min="0" max="60" value="30" />
+												<input type="number" class="form-input date-hour" name="to-hour" id="" min="0" max="24" value="16" />
 												<button class="quantity-arrow-minus"></button>
 											</div>
-										</div>
-									</div>
-									<div class="reserve-time__to">
-										<p>Час до</p>
-										<div class="time-to__hour">
-											<div class="input-number-wrapper">
+											<span>:</span>
+											<div class="form-number-wrapper">
 												<button class="quantity-arrow-plus"></button>
-												<input type="number" class="input-number date-hour" name="to-hour" id="" min="0" max="24" value="16" />
-												<button class="quantity-arrow-minus"></button>
-											</div>
-										</div>
-										<span>:</span>
-										<div class="time-to__minute">
-											<div class="input-number-wrapper">
-												<button class="quantity-arrow-plus"></button>
-												<input type="number" class="input-number date-minute" name="to-minute" id="" min="0" max="60" value="30" />
+												<input type="number" class="form-input date-minute" name="to-minute" id="" min="0" max="60" value="30" />
 												<button class="quantity-arrow-minus"></button>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="reserve-specialist">
-									<div class="select-wrapper input-wrapper">
-										<select name="reserve-specialist" id="reserve-specialist">
+								<div class="form-group">
+									<div class="form-select-wrapper">
+										<select name="reserve-specialist" class="form__select" id="reserve-specialist">
 											<option hidden value="Оберіть спеціаліста">Лікар</option>
 											<option value="Львів">Юля</option>
 											<option value="Київ">Настя</option>
@@ -921,26 +904,28 @@
 										</select>
 									</div>
 								</div>
-								<div class="reserve-message">
-									<textarea name="reserve-message" id="" cols="30" rows="10" placeholder="Коментар"></textarea>
+								<div class="form-group">
+									<textarea name="reserve-message" class="form-textarea" id="" cols="30" rows="5" placeholder="Коментар"></textarea>
 								</div>
-								<div class="reserve-checkboxes">
-									<p>Ви бажаєте отримати повідомлення про запис на:</p>
-									<div class="checkbox-wrapper d-flex">
-										<label class="d-flex align-middle">
-											<input type="checkbox" name="reserve-inform-email" id="" />
-											<span class="checkmark"></span>
-											e-mail
-										</label>
-										<label class="d-flex align-middle">
-											<input type="checkbox" name="reserve-inform-phone" id="" />
-											<span class="checkmark"></span>
-											номер телефону
-										</label>
+								<div class="form-group">
+									<div class="reserve-checkboxes">
+										<p>Ви бажаєте отримати повідомлення про запис на:</p>
+										<div class="form-checkbox-wrapper d-flex">
+											<label class="d-flex align-middle">
+												<input type="checkbox" class="form-checkbox" name="reserve-inform-email" id="" />
+												<span class="checkmark"></span>
+												e-mail
+											</label>
+											<label class="d-flex align-middle">
+												<input type="checkbox" class="form-checkbox" name="reserve-inform-phone" id="" />
+												<span class="checkmark"></span>
+												номер телефону
+											</label>
+										</div>
 									</div>
 								</div>
-								<div class="reserve-submit">
-									<input type="submit" value="Записатись на консультацію" class="btn btn-primary" />
+								<div class="form-group">
+									<input type="submit" value="Записатись на консультацію" class="btn btn-primary form-submit" />
 								</div>
 							</form>
 						</div>
@@ -948,24 +933,16 @@
 				</div>
 			</div>
 		</div>
-		<div class="modal modal-online-reserve online-reserve-main" data-modal="online-reserve">
+
+		<div class="modal online-reserve-main" data-modal="online-reserve">
 			<div class="modal-body">
-				<div class="modal-content reserve-modal online-reserve">
+				<div class="modal-content modal-reserve modal-online-reserve">
 					<span class="modal-close js-close-modal"></span>
 					<div class="modal-content-box d-flex align-middle">
 						<div class="form">
 							<form action="">
 								<div class="reserve-header heading-3 --bold">
 									ONLINE Запис
-								</div>
-								<div class="reserve-city">
-									<div class="select-wrapper input-wrapper">
-										<select name="reserve-city" id="reserve-city">
-											<option hidden value="Оберіть місто">Оберіть місто</option>
-											<option value="Львів">Львів</option>
-											<option value="Київ">Київ</option>
-										</select>
-									</div>
 								</div>
 								<div class="online-reserve-call">
 									<div class="reserve-call-wrapper">
@@ -974,28 +951,24 @@
 										</div>
 									</div>
 								</div>
-								<div class="reserve-inputs">
-									<div class="reserve-pib input-wrapper">
-										<input type="text" name="reserve-pib" id="" placeholder="ПІБ" />
-									</div>
-									<div class="reserve-phone input-wrapper">
-										<input type="tel" name="reserve-phone" id="" placeholder="+38 (0__) ___ __ __  " />
-									</div>
-									<div class="reserve-email input-wrapper">
-										<input type="email" name="reserve-email" id="" placeholder="Email" />
-									</div>
+								<div class="form-group w-70">
+									<input type="text" class="form-input" name="online-reserve-pib" id="" placeholder="ПІБ" />
 								</div>
-								<div class="reserve-date">
-									<div class="reserve-date__day">
-										<div class="input-number-wrapper">
+								<div class="form-group">
+									<input type="tel" class="form-input" name="online-reserve-phone" id="" placeholder="+38 (0__) ___ __ __  " />
+								</div>
+								<div class="form-group">
+									<input type="email" class="form-input" name="online-reserve-email" id="" placeholder="Email" />
+								</div>
+								<div class="form-group">
+									<div class="reserve-date">
+										<div class="form-number-wrapper reserve-date__day">
 											<button class="quantity-arrow-plus"></button>
-											<input type="number" class="input-number date-day" name="reserve-day" id="" min="1" max="31" value="" />
+											<input type="number" class="form-input date-day" name="online-reserve-day" id="" min="1" max="31" value="" />
 											<button class="quantity-arrow-minus"></button>
 										</div>
-									</div>
-									<div class="reserve-date__month">
-										<div class="select-wrapper">
-											<select name="reserve-month" class="reserve-month" id="">
+										<div class="form-select-wrapper reserve-date__month">
+											<select name="online-reserve-month" class="reserve-month form__select" id="">
 												<option value="1">Січень</option>
 												<option value="2">Лютий</option>
 												<option value="3">Березень</option>
@@ -1010,57 +983,49 @@
 												<option value="12">Грудень</option>
 											</select>
 										</div>
-									</div>
-									<div class="reserve-date__year">
-										<input type="text" class="reserve-year" name="reserve-year" id="" placeholder="" />
+										<div class="reserve-date__year">
+											<input type="text" class="form-input reserve-year" name="online-reserve-year" id="" placeholder="" />
+										</div>
 									</div>
 								</div>
-								<div class="reserve-time">
-									<div class="reserve-time__from">
-										<p>Час від</p>
-										<div class="time-from__hour">
-											<div class="input-number-wrapper">
+								<div class="form-group">
+									<div class="reserve-time">
+										<div class="reserve-time__from">
+											<p>Час від</p>
+											<div class="form-number-wrapper">
 												<button class="quantity-arrow-plus"></button>
-												<input type="number" class="input-number date-hour" name="from-hour" id="" min="0" max="24" value="15" />
+												<input type="number" class="form-input date-hour" name="from-hour" id="" min="0" max="24" value="15" />
+												<button class="quantity-arrow-minus"></button>
+											</div>
+											<span>:</span>
+											<div class="form-number-wrapper">
+												<button class="quantity-arrow-plus"></button>
+												<input type="number" class="form-input date-minute" name="from-minute" id="" min="0" max="60" value="30" />
 												<button class="quantity-arrow-minus"></button>
 											</div>
 										</div>
-										<span>:</span>
-										<div class="time-from__minute">
-											<div class="input-number-wrapper">
+										<div class="reserve-time__to">
+											<p>Час до</p>
+											<div class="form-number-wrapper">
 												<button class="quantity-arrow-plus"></button>
-												<input type="number" class="input-number date-minute" name="from-minute" id="" min="0" max="60" value="30" />
+												<input type="number" class="form-input date-hour" name="to-hour" id="" min="0" max="24" value="16" />
 												<button class="quantity-arrow-minus"></button>
 											</div>
-										</div>
-									</div>
-									<div class="reserve-time__to">
-										<p>Час до</p>
-										<div class="time-to__hour">
-											<div class="input-number-wrapper">
+											<span>:</span>
+											<div class="form-number-wrapper">
 												<button class="quantity-arrow-plus"></button>
-												<input type="number" class="input-number date-hour" name="to-hour" id="" min="0" max="24" value="16" />
-												<button class="quantity-arrow-minus"></button>
-											</div>
-										</div>
-										<span>:</span>
-										<div class="time-to__minute">
-											<div class="input-number-wrapper">
-												<button class="quantity-arrow-plus"></button>
-												<input type="number" class="input-number date-minute" name="to-minute" id="" min="0" max="60" value="30" />
+												<input type="number" class="form-input date-minute" name="to-minute" id="" min="0" max="60" value="30" />
 												<button class="quantity-arrow-minus"></button>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="online-reserve-procedure">
-									<div class="input-wrapper">
-										<input type="text" name="online-registration-procedure" id="" placeholder="Введіть процедуру, які вас цікавить" />
-									</div>
+								<div class="form-group">
+									<input type="text" class="form-input" name="online-registration-procedure" id="" placeholder="Введіть процедуру, які вас цікавить" />
 								</div>
-								<div class="reserve-specialist">
-									<div class="select-wrapper input-wrapper">
-										<select name="reserve-specialist" id="reserve-specialist">
+								<div class="form-group">
+									<div class="form-select-wrapper">
+										<select name="reserve-specialist" class="form__select" id="reserve-specialist">
 											<option hidden value="Оберіть спеціаліста">Лікар</option>
 											<option value="Львів">Юля</option>
 											<option value="Київ">Настя</option>
@@ -1068,26 +1033,26 @@
 										</select>
 									</div>
 								</div>
-								<div class="reserve-message">
-									<textarea name="reserve-message" id="" cols="30" rows="10" placeholder="Коментар"></textarea>
+								<div class="form-group">
+									<textarea name="reserve-message" class="form-textarea" id="" cols="30" rows="5" placeholder="Коментар"></textarea>
 								</div>
-								<div class="reserve-checkboxes">
+								<div class="form-group reserve-checkboxes">
 									<p>Ви бажаєте отримати повідомлення про запис на:</p>
-									<div class="checkbox-wrapper d-flex">
+									<div class="form-checkbox-wrapper d-flex">
 										<label class="d-flex align-middle">
-											<input type="checkbox" name="reserve-inform-email" id="" />
+											<input type="checkbox" class="form-checkbox" name="reserve-inform-email" id="" />
 											<span class="checkmark"></span>
 											e-mail
 										</label>
 										<label class="d-flex align-middle">
-											<input type="checkbox" name="reserve-inform-phone" id="" />
+											<input type="checkbox" class="form-checkbox" name="reserve-inform-phone" id="" />
 											<span class="checkmark"></span>
 											номер телефону
 										</label>
 									</div>
 								</div>
-								<div class="reserve-submit">
-									<input type="submit" value="Записатись на консультацію" class="btn btn-primary" />
+								<div class="form-group">
+									<input type="submit" value="Записатись на консультацію" class="btn btn-primary form-submit" />
 								</div>
 							</form>
 						</div>
@@ -1095,9 +1060,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="modal modal-online-reserve online-reserve-callback">
+		<div class="modal online-reserve-callback">
 			<div class="modal-body">
-				<div class="modal-content reserve-modal online-reserve online-reserve-callback">
+				<div class="modal-content callback">
 					<span class="modal-close callback-close"></span>
 					<div class="modal-content-box d-flex align-middle">
 						<div class="form">
@@ -1105,13 +1070,11 @@
 								<div class="reserve-header heading-3 --bold">
 									Замовити дзвінок
 								</div>
-								<div class="reserve-inputs">
-									<div class="reserve-pib input-wrapper">
-										<input type="text" name="callback-pib" id="" placeholder="ПІП" />
-									</div>
-									<div class="reserve-phone input-wrapper">
-										<input type="tel" name="callback-phone" id="" placeholder="+38 (0__) ___ __ __  " />
-									</div>
+								<div class="form-group">
+									<input type="text" class="form-input" name="callback-pib" id="" placeholder="ПІП" />
+								</div>
+								<div class="form-group">
+									<input type="tel" class="form-input" name="callback-phone" id="" placeholder="+38 (0__) ___ __ __  " />
 								</div>
 								<div class="reserve-submit">
 									<input type="submit" value="Записатись на консультацію" class="btn btn-primary" />

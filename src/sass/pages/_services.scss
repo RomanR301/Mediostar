@@ -253,7 +253,7 @@
       position: relative;
       & a {
         &:hover i:before {
-          background-image: url('/src/img/menu-arrow-white.svg');
+          background-image: url('../../src/img/menu-arrow-white.svg');
           transform: rotate(-180deg)
         }
       }

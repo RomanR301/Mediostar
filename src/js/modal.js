@@ -32,6 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (key == 27) {
             document.querySelector('.modal.active').classList.remove('active');
             document.querySelector('.overlay').classList.remove('active');
+            bodyOverflow.classList.remove('modal-open');
+            onlineReg.classList.remove('online-registration-active');
         };
     }, false);
     overlay.addEventListener('click', function() {
@@ -43,17 +45,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // addition to callback modal inside online register modal
-$('.online-reserve-call').click(function(){
-    $('.modal-online-reserve').removeClass('active');
+$(document).on('click', '.online-reserve-call', function(){
+    $('.online-reserve-main').removeClass('active');
     $('.online-reserve-callback').addClass('active');
 });
 
-$('.online-callback-back').click(function(){
+$(document).on('click', '.online-callback-back', function(){
     $('.online-reserve-callback').removeClass('active');
     $('.online-reserve-main').addClass('active');
 })
 
-$('.callback-close').click(function(){
+$(document).on('click', '.callback-close', function(){
     $('.modal').removeClass('active');
     $('.overlay').removeClass('active');
     $('body').removeClass('modal-open');

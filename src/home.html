@@ -8,8 +8,10 @@
 
 		<title>Mediostar</title>
 		<meta name="description" content="" />
-		<link rel="stylesheet" href="http://sandbox.vciwork.com/codepenstuff/css/magnific-popup.css" />
+
 		<link href="css/main.css" rel="stylesheet" />
+		<link href="css/magnific-popup.css" rel="stylesheet" />
+		<link href="css/mapbox.css" rel="stylesheet" />
 	</head>
 	<body>
 		<!--<div id="header"></div>-->
@@ -49,6 +51,9 @@
 			<nav class="header-primary">
 				<div class="container --relative">
 					<div class="row align-middle align-justify ">
+						<div class="online-registration js-open-modal" data-modal="online-reserve">
+							ONLINE ЗАПИС
+						</div>
 						<div class="header__column">
 							<div class="header-logo">
 								<a href="home.html" class="header-logo__link default-icon" rel="home"> <img src="img/logo.png" class="header-logo__icon" alt="Mediostar"/></a>
@@ -553,8 +558,8 @@
 					<div class="col-md-12 col-xs-12">
 						<h2 class="app-screen__title heading-2 --bold">ВІДГУКИ НАШИХ КЛІЄНТІВ</h2>
 						<div class="d-flex align-left btn-wrap">
-							<button class="btn btn-primary">Залишити відгук</button>
-							<button class="btn btn-primary">Написати керуючій клініки</button>
+							<button class="btn btn-primary js-open-modal" data-modal="leave-response">Залишити відгук</button>
+							<button class="btn btn-primary js-open-modal" data-modal="write-to-manager">Написати керуючій клініки</button>
 						</div>
 					</div>
 				</div>
@@ -955,15 +960,107 @@
 				</div>
 			</div>
 		</footer>
-
+		<div class="modal" data-modal="leave-response">
+			<div class="modal-body">
+				<div class="modal-content modal-response">
+					<span class="modal-close js-close-modal"></span>
+					<div class="modal-response__heading heading-3 --bold">Залишити відгук</div>
+					<form action="">
+						<div class="form-group">
+							<div class="form-file-wrapper">
+								<input type="file" class="form-file" id="file-response" accept=".png, .jpg, .jpeg" />
+								<label for="file-response"><i class="upload-image"></i></label>
+								<div class="avatar-preview">
+									<div class="imagePreview" style="background-image: url('../img/upload-image.svg');"></div>
+								</div>
+								<div class="form-file-text">
+									Завантажте вашу фотографію (отриманий результат або фото обличчя)
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-input" name="response-pib" id="" placeholder="ПІБ" />
+						</div>
+						<div class="form-group">
+							<input type="tel" class="form-input" name="response-phone" id="" placeholder="+38 (0__) ___ __ __  " />
+						</div>
+						<div class="form-group">
+							<input type="email" class="form-input" name="response-email" id="" placeholder="Email" />
+						</div>
+						<div class="form-group">
+							<input type="email" class="form-input" name="response-social" id="" placeholder="Посилання на соц. мережу" />
+						</div>
+						<div class="form-group">
+							<textarea name="response-message" class="form-textarea" id="" cols="30" rows="5" placeholder="Коментар"></textarea>
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Відправити відгук" class="btn btn-primary" />
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="modal" data-modal="write-to-manager">
+			<div class="modal-body">
+				<div class="modal-content modal-to-manager">
+					<span class="modal-close js-close-modal"></span>
+					<div class="modal-to-manager__heading heading-3 --bold">Надіслати повідомлення керуючій клініки</div>
+					<div class="modal-content-box d-flex align-start">
+						<div class="modal-content-image">
+							<img src="../src/img/contacts-image.jpg" alt="contact-person" />
+							<div class="contact-person --bold">
+                                Жук Вікторія Юріївна
+							</div>
+						</div>
+						<div class="modal-content-form">
+							<div class="form">
+								<form action="">
+									<div class="form-group">
+										<div class="form-file-wrapper">
+											<input type="file" class="form-file" accept=".png, .jpg, .jpeg" />
+											<label for="file-response"><i class="upload-image"></i></label>
+											<div class="avatar-preview">
+												<div class="imagePreview" style="background-image: url('');"></div>
+											</div>
+											<div class="form-file-text">
+												Завантажте вашу фотографію (отриманий результат або фото обличчя)
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-input" name="to-manager-pib" placeholder="ПІБ" />
+									</div>
+									<div class="form-group">
+										<input type="email" class="form-input" name="to-manager-email" placeholder="Ваш Email" />
+									</div>
+									<div class="form-group">
+										<input type="tel" class="form-input" name="to-manager-phone" placeholder="+38 (0__) ___ __ __" />
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-input" name="to-manager-social" placeholder="Посилання на соц. мережу" />
+									</div>
+									<div class="form-group">
+										<textarea name="to-manager-message" class="form-textarea" placeholder="Ваше повідомлення" rows="7" required></textarea>
+									</div>
+									<div class="form-group">
+										<input type="submit" class="btn btn-primary contact-submit" value="Надіслати" />
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="overlay js-overlay-modal"></div>
 		<script src="js/libs/jquery-3.4.1.js"></script>
 		<script src="js/libs/flickity.pkgd.min.js"></script>
 		<script src="js/jquery.magnific-popup.min.js"></script>
-
 		<script src="js/js_mediostar.min.js"></script>
 		<script src="js/sliders.min.js"></script>
 		<script src="js/magnific-popup.min.js"></script>
 		<script src="https://api.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.js"></script>
+		<script src="js/modal.js"></script>
 		<script src="js/roman.js"></script>
 		<script src="js/map-kyiv.js"></script>
 		<!--
