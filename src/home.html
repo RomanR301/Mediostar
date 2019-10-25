@@ -965,37 +965,40 @@
 				<div class="modal-content modal-response">
 					<span class="modal-close js-close-modal"></span>
 					<div class="modal-response__heading heading-3 --bold">Залишити відгук</div>
-					<form action="">
+
+					<form action="/#wpcf7-f876-o6" method="post" class="wpcf7-form" enctype="multipart/form-data" novalidate="novalidate">
+						<div style="display: none;">
+							<input type="hidden" name="_wpcf7" value="876" />
+							<input type="hidden" name="_wpcf7_version" value="5.1.4" />
+							<input type="hidden" name="_wpcf7_locale" value="uk" />
+							<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f876-o6" />
+							<input type="hidden" name="_wpcf7_container_post" value="0" />
+						</div>
 						<div class="form-group">
-							<div class="form-file-wrapper">
-								<input type="file" class="form-file" id="file-response" accept=".png, .jpg, .jpeg" />
-								<label for="file-response"><i class="upload-image"></i></label>
-								<div class="avatar-preview">
-									<div class="imagePreview" style="background-image: url('../img/upload-image.svg');"></div>
-								</div>
-								<div class="form-file-text">
-									Завантажте вашу фотографію (отриманий результат або фото обличчя)
-								</div>
+							<div class="form-file-text">
+								Завантажте вашу фотографію (отриманий результат або фото обличчя)
 							</div>
+							<p>
+								<span class="wpcf7-form-control-wrap reviews-reserve-file"><input type="file" name="reviews-reserve-file" size="40" class="wpcf7-form-control wpcf7-file wpcf7-validates-as-required form-file" accept=".jpg,.jpeg,.png,.gif,.pdf" aria-required="true" aria-invalid="false"/></span>
+							</p>
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-input" name="response-pib" id="" placeholder="ПІБ" />
+							<span class="wpcf7-form-control-wrap reserve-pib" data-children-count="1"><input type="text" name="reserve-pib" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-input" aria-required="true" aria-invalid="false" placeholder="ПІБ"/></span>
 						</div>
 						<div class="form-group">
-							<input type="tel" class="form-input" name="response-phone" id="" placeholder="+38 (0__) ___ __ __  " />
+							<span class="wpcf7-form-control-wrap reserve-phone" data-children-count="1"><input type="tel" name="reserve-phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel form-input" aria-required="true" aria-invalid="false" placeholder="+38 (0__) ___ __ __" data-kwimpalastatus="alive" data-kwimpalaid="1571922903185-15"/></span>
 						</div>
 						<div class="form-group">
-							<input type="email" class="form-input" name="response-email" id="" placeholder="Email" />
+							<span class="wpcf7-form-control-wrap reserve-email" data-children-count="1"><input type="email" name="reserve-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-input" aria-required="true" aria-invalid="false" placeholder="Email" data-kwimpalastatus="alive" data-kwimpalaid="1571922903185-16"/></span>
 						</div>
 						<div class="form-group">
-							<input type="email" class="form-input" name="response-social" id="" placeholder="Посилання на соц. мережу" />
+							<span class="wpcf7-form-control-wrap response-social" data-children-count="1"><input type="text" name="response-social" value="" size="40" class="wpcf7-form-control wpcf7-text form-input" aria-invalid="false" placeholder="Посилання на соц. мережу"/></span>
 						</div>
 						<div class="form-group">
-							<textarea name="response-message" class="form-textarea" id="" cols="30" rows="5" placeholder="Коментар"></textarea>
+							<span class="wpcf7-form-control-wrap reserve-message" data-children-count="1"><textarea name="reserve-message" cols="30" rows="5" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required form-textarea" aria-required="true" aria-invalid="false" placeholder="Коментар"></textarea></span>
 						</div>
-						<div class="form-group">
-							<input type="submit" value="Відправити відгук" class="btn btn-primary" />
-						</div>
+						<div class="form-group"><input type="submit" value="Відправити відгук" class="wpcf7-form-control wpcf7-submit btn btn-primary form-submit" /><span class="ajax-loader"></span></div>
+						<div class="wpcf7-response-output wpcf7-display-none"></div>
 					</form>
 				</div>
 			</div>
@@ -1009,16 +1012,24 @@
 						<div class="modal-content-image">
 							<img src="../src/img/contacts-image.jpg" alt="contact-person" />
 							<div class="contact-person --bold">
-                                Жук Вікторія Юріївна
+								Жук Вікторія Юріївна
 							</div>
 						</div>
 						<div class="modal-content-form">
 							<div class="form">
 								<form action="">
 									<div class="form-group">
+										<div class="form-file-text">
+											Завантажте вашу фотографію (отриманий результат або фото обличчя)
+										</div>
+										<p>
+											<span class="wpcf7-form-control-wrap reviews-reserve-file"><input type="file" name="reviews-reserve-file" size="40" class="wpcf7-form-control wpcf7-file wpcf7-validates-as-required form-file" accept=".jpg,.jpeg,.png,.gif,.pdf" aria-required="true" aria-invalid="false"/></span>
+										</p>
+									</div>
+									<!-- <div class="form-group">
 										<div class="form-file-wrapper">
 											<input type="file" class="form-file" accept=".png, .jpg, .jpeg" />
-											<label for="file-response"><i class="upload-image"></i></label>
+											<label class="input-image-label" for="file-response"><i class="upload-image"></i></label>
 											<div class="avatar-preview">
 												<div class="imagePreview" style="background-image: url('');"></div>
 											</div>
@@ -1026,7 +1037,7 @@
 												Завантажте вашу фотографію (отриманий результат або фото обличчя)
 											</div>
 										</div>
-									</div>
+									</div> -->
 									<div class="form-group">
 										<input type="text" class="form-input" name="to-manager-pib" placeholder="ПІБ" />
 									</div>

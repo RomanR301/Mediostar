@@ -164,56 +164,7 @@
     padding: 12px 36px;
     font-size: 16px;
   }
-  &-file {
-    display: none;
-    & + label {
-      background: $accentColor;
-      border: none;
-      border-radius: 100px;
-      cursor: pointer;
-      display: inline-block;
-      outline: none;
-      transition: all 0.3s;
-      width: 34px;
-      height: 34px;
-      position: absolute;
-      top: 20px;
-      z-index: 2;
-      left: 54px;
-    }
-    &-wrapper {
-      display: flex;
-      align-items: center;
-      padding-top: 24px;
-      position: relative;
-      & .avatar-preview {
-        width: 84px;
-        height: 84px;
-        position: relative;
-        border-radius: 100%;
-        > div {
-            width: 100%;
-            height: 100%;
-            border-radius: 100%;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-      }
-    }
-    &-text {
-      color: #7C7C7C;
-      font-size: 14px;
-      line-height: 20px;
-      width: 70%;
-      padding-left: 24px;
-    }
-    &-image {
-      width: 84px;
-      height: 84px;
-      border-radius: 100px;
-    }
-  }
+
 }
 
 .contact-submit {
@@ -294,6 +245,83 @@ input[type=number]::-webkit-outer-spin-button {
       display: none;
     }
   }
+  &-file {
+    top: 100px;
+    color: $accentColor;
+    font-size: 20px;
+    padding-top: 10px;
+    outline: none;
+    border: none;
+    border: none;
+    &::-webkit-file-upload-button {
+      visibility: hidden;
+    }
+    &:before {
+      content: url("../img/upload-image.svg");
+      width: 84px;
+      height: 84px;
+      border-radius: 100%;
+      background: $accentColor;
+      position: absolute;
+      top: -80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      padding-top: 24px;
+      position: relative;
+      & .input-image-label {
+        background: $accentColor;
+        border: none;
+        border-radius: 100px;
+        cursor: pointer;
+        display: inline-block;
+        outline: none;
+        transition: all 0.3s;
+        width: 34px;
+        height: 34px;
+        position: absolute;
+        top: 20px;
+        z-index: 2;
+        left: 54px;
+      }
+      & .avatar-preview {
+        width: 84px;
+        height: 84px;
+        position: relative;
+        border-radius: 100%;
+        > div {
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+      }
+    }
+    &-text {
+      color: #7C7C7C;
+      font-size: 14px;
+      line-height: 20px;
+      width: 78%;
+      padding: 48px 0 0 24px;
+      margin-left: auto;
+    }
+    &-image {
+      width: 84px;
+      height: 84px;
+      border-radius: 100px;
+    }
+  }
+}
+
+
+.wpcf7-form-control-wrap {
+  position: static!important;
 }
 
 

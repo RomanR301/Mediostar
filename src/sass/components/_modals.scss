@@ -298,9 +298,6 @@
     }
     & .form-file-wrapper {
       padding-top: 0;
-      & .form-file + label {
-        top: 0;
-      }
     }
   }
 }
@@ -433,6 +430,13 @@
     &-response {
       width: 100%;
       padding: 20px;
+    }
+    & .form-file:before {
+      top: 66px;
+    }
+    & .form-file-text {
+      padding: 28px 0 0 124px;
+      width: 100%;
     }
   }
 }
